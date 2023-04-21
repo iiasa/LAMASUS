@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation &mdash; LAMASUS  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Understanding Git" href="understanding-git.html" />
+    <link rel="prev" title="FAIR principles, formats, and reproducibility" href="FAIR-principles.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #D0D0D0" >
+            <a href="../index.html">
+            <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                v2023-4-21
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+   
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../managing-code-and-data.html">Managing Code and Data</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-control.html">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-git-ecosystem.html">The Git ecosystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html">Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAIR-principles.html">FAIR principles, formats, and reproducibility</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-git.html">Understanding Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="taming-git.html">Taming Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="specialized-data-stores.html">Specialized Data Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-management.html">Release Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="good-practices-example.html">Good practices example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="go-with-the-flow.html">Go with the flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IT-infrastructure.html">IT Infrastructure</a></li>
+</ul>
+
+   <p class="caption">
+     <span class="caption-text">References:</span>
+   </p>
+   <ul>
+        <li class="toctree-l1"><a href= "../genindex.html">Index</a></li>
+   </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #D0D0D0" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LAMASUS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../managing-code-and-data.html">Managing Code and Data</a></li>
+      <li class="breadcrumb-item active">Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="documentation">
+<span id="index-0"></span><h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading"></a></h1>
+<p>Reusability and reproducibility is supported by useful documentation. Metadata
+and in-code comments are limited. Human-readable documentation can provide the
+missing context and give detailed guidance.</p>
+<p id="readme">When managing code or data with Git, at a minimum include a small README text
+file at the root of the Git repository tree with a brief synopsis and a mention
+of the license. When the repository is hosted on GitHub or GitLab, using
+<a class="reference external" href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> — as a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> at
+the root of the repository — or one of the other markup formats supported by
+GitHub/GitLab, will provide richer documentation that renders as a webpage with
+styling and links when browsing the repository via the GitHub/GitLab web
+interface, yet still can be read as a text file after cloning the repository for
+offline use. For an introduction see the <a class="reference external" href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github">quickstart for writing on GitHub</a>
+and the description of GitLab <a class="reference external" href="https://docs.gitlab.com/ee/user/project/repository/index.html#readme-and-index-files">README and index files</a>.
+You can include several such markup files in a repository and link them together
+to create quite elaborate documentation that is co-managed with your code or
+data. See for example <a class="reference external" href="https://github.com/iiasa/Condor_run_R/blob/master/README.md">this Markdown README</a> of a repository
+that includes multiple Markdown files to provide elaborate documentation
+webpages via GitHub.</p>
+<p id="index-1">When the documentation is an ad-hoc effort shared among collaborators, instead
+using the <a class="reference external" href="https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis">GitHub wiki</a>
+or <a class="reference external" href="https://docs.gitlab.com/ee/user/project/wiki/">GitLab wiki</a> service
+associated with a repository should be considered. Beware though that this makes
+your documentation dependent on either platform, and will no longer include the
+documentation when the repository is cloned. It is therefore important to still
+include a README that links to the wiki.</p>
+<p>For more elaborate needs, many other options exist. For example, the <a class="reference external" href="https://pages.github.com/">GitHub
+pages service</a> allows you to set up a website with
+provided-for hosting. Generating a web site and other documentation formats from
+in-code comments using tools such <a class="reference external" href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">roxygen2</a> or
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> is highly recommended since
+it makes it easier to keep code and documentation in-sync. Sphinx can also be
+used to generate documentation from text-based markup files that can be handled
+conveniently with Git. Sphinx supports cross reference links and index entries
+to make the documentation more useful as a reference — see for example the
+Sphinx-generated documentation you are reading now. Just as with code or data,
+the evolution of elaborate documentation needs to be managed, and can be managed
+well with a <a class="reference internal" href="workflows.html#workflows"><span class="std std-ref">Git workflow</span></a>.</p>
+<p>A good example is the IIASA <a class="reference external" href="https://github.com/iiasa/message_ix">MESSAGEix model framework repository</a> hosted on GitHub. It has a
+<code class="docutils literal notranslate"><span class="pre">README.md</span></code> that among other things mentions the license, but also holds a
+<code class="docutils literal notranslate"><span class="pre">CITATION.cff</span></code> file. Rich documentation is provided via a <a class="reference external" href="https://docs.messageix.org">MESSAGEix
+documentation website</a>. The <a class="reference external" href="https://docs.messageix.org/en/stable/api.html">documentation for
+the Python API</a> is generated
+from in-code comments. Other content for the website is managed in a <a class="reference external" href="https://github.com/iiasa/message_ix/tree/main/doc">doc
+subdirectory of the repository</a> from which the website is
+built using Sphinx. Note that the code and documentation are managed together in
+a single repository.</p>
+<p id="index-2">When documentation might become elaborate — as will be the case for a large
+model — plan for its maintenance. Information will become outdated. Links to
+external resources will break. Using a documentation generator such as Sphinx
+can save a lot of time by automating the creation of updates of documentation in
+multiple formats. Sphinx will also check links on generation. When using links
+in markup files in a repository or a wiki, you can use a link checker such as
+<a class="reference external" href="https://lychee.cli.rs">Lychee</a> and automate it via <a class="reference external" href="https://github.com/features/actions">GitHub Actions</a> or otherwise.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="FAIR-principles.html" class="btn btn-neutral float-left" title="FAIR principles, formats, and reproducibility" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="understanding-git.html" class="btn btn-neutral float-right" title="Understanding Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Albert Brouwer, IIASA.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

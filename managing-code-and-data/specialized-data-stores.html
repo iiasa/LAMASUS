@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specialized Data Stores &mdash; LAMASUS  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Release Management" href="release-management.html" />
+    <link rel="prev" title="Taming Git" href="taming-git.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #D0D0D0" >
+            <a href="../index.html">
+            <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                v2023-4-21
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+   
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../managing-code-and-data.html">Managing Code and Data</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-control.html">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-git-ecosystem.html">The Git ecosystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html">Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAIR-principles.html">FAIR principles, formats, and reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-git.html">Understanding Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="taming-git.html">Taming Git</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Specialized Data Stores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#do-you-really-need-one">Do you really need one?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-read-only-stores">Use read-only stores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-initialize-from-a-git-lfs-repository">Update/initialize from a Git (LFS) repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exporting-to-a-git-lfs-repository">Exporting to a Git LFS repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#containerized-store">Containerized store</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release-management.html">Release Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="good-practices-example.html">Good practices example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="go-with-the-flow.html">Go with the flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IT-infrastructure.html">IT Infrastructure</a></li>
+</ul>
+
+   <p class="caption">
+     <span class="caption-text">References:</span>
+   </p>
+   <ul>
+        <li class="toctree-l1"><a href= "../genindex.html">Index</a></li>
+   </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #D0D0D0" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LAMASUS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../managing-code-and-data.html">Managing Code and Data</a></li>
+      <li class="breadcrumb-item active">Specialized Data Stores</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="specialized-data-stores">
+<h1>Specialized Data Stores<a class="headerlink" href="#specialized-data-stores" title="Permalink to this heading"></a></h1>
+<p>Not all data management fits into the pattern of evolving a file tree. Sometimes
+a specialized data store such as a geo-spatial database or a relational database
+is needed to attain sufficient performance. Such data stores index the data for
+fast access and provide some kind of query interface or language for data
+retrieval and updates. When introducing such a data store to a project, you risk
+losing out on many of the benefits of unified code and data management via the
+Git ecosystem as discussed on the prior pages since there is now an additional
+place where to perform updates that bypasses Git. Moreover, such data stores
+introduce their own complexities such as hosting, maintenance, and the need for
+an additional access control mechanism. This page suggests ways to mitigate
+these risks and complexities.</p>
+<section id="do-you-really-need-one">
+<h2>Do you really need one?<a class="headerlink" href="#do-you-really-need-one" title="Permalink to this heading"></a></h2>
+<p>Carefully consider whether a specialized data store is really required.
+Sometimes they are added to a project for relatively frivolous reasons, for
+example when just a few data files with an efficient data structure such as a
+hash table would be perfectly fine and performant for meeting requirements.</p>
+<p>It may be that the developers are familiar with using a particular data store
+together with their preferred coding framework. This will ease development, but
+may end up burdening the later data management in addition to adding
+complexities. These costs should be weighed when making a decision on
+introducing a specialized data store.</p>
+</section>
+<section id="use-read-only-stores">
+<h2>Use read-only stores<a class="headerlink" href="#use-read-only-stores" title="Permalink to this heading"></a></h2>
+<p>Speed of access is the main reason for requiring a specialized data store. The
+indexing and selective querying allow you to quickly retrieve just the
+information needed, for example for interactive visualization. This use case can
+be covered by read-only access to the data store: only queries are allowed,
+updates are disallowed. Instead, the data in the data store is updated and
+re-indexed only on release of the data at the end of a well-managed workflow.</p>
+</section>
+<section id="update-initialize-from-a-git-lfs-repository">
+<h2>Update/initialize from a Git (LFS) repository<a class="headerlink" href="#update-initialize-from-a-git-lfs-repository" title="Permalink to this heading"></a></h2>
+<p>By providing scripting to update/initialize the data store from  Git repository
+— or a Git LFS repository when the data is large — you can bring the post-update
+or instantiation state of the data store under unified Git management. This can
+be useful for:</p>
+<ul class="simple">
+<li><p>Ensuring that the data store contains only well-vetted and verified data.</p></li>
+<li><p>Publishing a practical means for others to to set up their own data store.</p>
+<ul>
+<li><p>Needed because the code and data of the project won’t be usable when
+published without a means to obtain an instance of the specialized data
+store.</p></li>
+</ul>
+</li>
+<li><p>Unified management of the the initial state of a test instance of the data
+store as used for development or integration testing, together with the code.</p></li>
+</ul>
+</section>
+<section id="exporting-to-a-git-lfs-repository">
+<h2>Exporting to a Git LFS repository<a class="headerlink" href="#exporting-to-a-git-lfs-repository" title="Permalink to this heading"></a></h2>
+<p>Specialized data stores typically allow the data they contain to be exported to
+files. These files will be large and can be stored in a Git LFS repository for
+purposes of:</p>
+<ul class="simple">
+<li><p>Publishing an evolved version of the data for the public or external
+researchers to use when setting up their own instance.</p>
+<ul>
+<li><p>For example to enable reproduction of results associated with a publication.</p></li>
+</ul>
+</li>
+<li><p>Backup with the option to retrieve a history of restore points.</p></li>
+<li><p>Managing data store backups together with matching code and data.</p>
+<ul>
+<li><p>For example to be able to reproduce past states of the overall system.</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using a read-only data store, there is no need to export: the data does
+not change, and the data-store can therefore be re-instantiated, or the data
+re-updated, from its original data source.</p>
+</div>
+</section>
+<section id="containerized-store">
+<h2>Containerized store<a class="headerlink" href="#containerized-store" title="Permalink to this heading"></a></h2>
+<p>Instead of deploying the data store on server infrastructure with system
+administration requirements, consider instantiating the store in a self-managed
+container via scripting. This reduces operational complexities.</p>
+<p>The container can be transient when the data is pulled in from a Git LFS
+repository on instantiation and, in case of data stores that are not read-only,
+exported to a Git LFS repository on destruction. See above.</p>
+<p>This approach makes it easier for others to reproduce your processing setup and
+hence your research. It also makes it easy to set up additional instances of the
+data store, for example for development or integration testing. When done
+testing, the instances can be destroyed.</p>
+<p>If updates to the data really have to be done through the data store — for
+example to ensure referential integrity via transactional updates on a
+relational database — a containerized store will make it easier to set up a
+transient management instance against which those updates are performed.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="taming-git.html" class="btn btn-neutral float-left" title="Taming Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="release-management.html" class="btn btn-neutral float-right" title="Release Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Albert Brouwer, IIASA.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

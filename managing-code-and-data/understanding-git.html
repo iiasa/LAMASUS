@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding Git &mdash; LAMASUS  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Taming Git" href="taming-git.html" />
+    <link rel="prev" title="Documentation" href="documentation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #D0D0D0" >
+            <a href="../index.html">
+            <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                v2023-4-21
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+   
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../managing-code-and-data.html">Managing Code and Data</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-control.html">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-git-ecosystem.html">The Git ecosystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html">Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAIR-principles.html">FAIR principles, formats, and reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Understanding Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="taming-git.html">Taming Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="specialized-data-stores.html">Specialized Data Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-management.html">Release Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="good-practices-example.html">Good practices example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="go-with-the-flow.html">Go with the flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IT-infrastructure.html">IT Infrastructure</a></li>
+</ul>
+
+   <p class="caption">
+     <span class="caption-text">References:</span>
+   </p>
+   <ul>
+        <li class="toctree-l1"><a href= "../genindex.html">Index</a></li>
+   </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #D0D0D0" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LAMASUS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../managing-code-and-data.html">Managing Code and Data</a></li>
+      <li class="breadcrumb-item active">Understanding Git</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="understanding-git">
+<h1>Understanding Git<a class="headerlink" href="#understanding-git" title="Permalink to this heading"></a></h1>
+<p>Having seen how various use cases can be accommodated by workflows that leverage
+the Git ecosystem for managing code and data, it is important to gain a better
+understanding of Git itself. Instead of diving into Git’s many features, which
+can be confusing, let’s take a step back to gain an overview.</p>
+<a class="reference internal image-reference" href="../_images/commits_optimized.svg"><img alt="../_images/commits_optimized.svg" class="align-center" src="../_images/commits_optimized.svg" width="700" /></a>
+<p id="commit">In essence, Git allows you to tightly manage the evolution of trees of files.
+Each new tree version resulting from changes to a tree (a <strong>commit</strong>) is stored by
+Git in a repository in unmodifiable and retrievable form, with a unique
+identifier.<a class="footnote-reference brackets" href="#f1" id="id1">1</a> This unique identifier is a so-called <strong>commit hash</strong><a class="footnote-reference brackets" href="#f2" id="id2">2</a> that
+is obtained by applying a cryptographic hash function to:</p>
+<ul class="simple">
+<li><p>The file changes</p></li>
+<li><p>The parent commit hash</p></li>
+<li><p>The commit message</p></li>
+<li><p>The commit author</p></li>
+<li><p>The committer (not necessarily the same as the author)</p></li>
+<li><p>The date</p></li>
+</ul>
+<p>None of these can change without invalidating the commit hash. This also holds
+for the parent of the parent, all the way back to an empty initial repository:
+the hash fixes the whole history of changes and hence also the state of the file
+tree at the time of the commit. The same hash cannot<a class="footnote-reference brackets" href="#f3" id="id3">3</a> result from the
+same file tree but with a different sequence of changes leading up to it. It
+cannot result from different authors making the very same changes, or the same
+authors committing the very same changes at a different time or with a different
+descriptive message.</p>
+<p>You can therefore think of a Git repository as a store that preserves the
+content, provenance, and retrievability of the entire history of a tree of files
+while giving tight control over changes. This is essential because copying and
+changing information has become so cheap and easy that files tend start to lead
+a life of their own: being copied at will, modified <em>ad hoc</em>, with ownership and
+responsibility soon lost.</p>
+<p>This does not mean that Git makes it difficult to copy and change information.
+Quite the reverse. Git embraces the convenience of easily making copies and
+applying changes for many purposes, yet gives you the tools to nevertheless keep
+track of change and <strong>consolidate significant changes</strong> in a repository. As a
+result, the validated/canonical/official/upstream copy of a file tree can be
+maintained in a well-managed manner inside a repository even when a storm of
+copying, revision, development, and experimentation is going on.</p>
+<p>That, in a nutshell, is the power of Git.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Git does not manage code and data for you, it helps you manage. You will need
+to tell Git what is important and should be tracked, and what can be ignored.
+You will need to describe why you made a change so that Git can keep a record.
+You will need an overview of your code or dataset and a goal for its
+evolution. It is perfectly possible to use Git and still make a mess.</p>
+<p>In short, Git is stupid, it needs your insight and intelligence.</p>
+</div>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Since a commit involves a set of changes to a particular prior version
+of the file tree, Git can show you the changes and also return the updated
+file tree given a commit identifier: you can therefore validly conceptualize
+a commit both as a change set and as a tree version.</p>
+</dd>
+<dt class="label" id="f2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Commit hash values are represented by Git as large <a class="reference external" href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</a> numbers with hexadecimal
+digits encoded by the characters <code class="docutils literal notranslate"><span class="pre">0123456789abcdef</span></code>. In the output of Git
+commands you will therefore see commits identified by strings such as
+<code class="docutils literal notranslate"><span class="pre">b773c1eb0b1cc59febce35c9b92d2a8ca3cb7e89</span></code>. You can use these as input to
+Git commands that operate on specific commits.</p>
+</dd>
+<dt class="label" id="f3"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Hash functions can produce hash collisions: yielding the same hash
+value with different input data. But Git uses the <a class="reference external" href="https://en.wikipedia.org/wiki/SHA-1">SHA-1</a> and stronger <a class="reference external" href="https://en.wikipedia.org/wiki/SHA-256">SHA-256</a> cryptographic hash functions which
+have been constructed such that the probability of a hash collision is
+extremely tiny, so that one can safely assume that hash values are unique
+for a given input.</p>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="documentation.html" class="btn btn-neutral float-left" title="Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="taming-git.html" class="btn btn-neutral float-right" title="Taming Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Albert Brouwer, IIASA.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

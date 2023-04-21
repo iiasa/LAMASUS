@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taming Git &mdash; LAMASUS  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Specialized Data Stores" href="specialized-data-stores.html" />
+    <link rel="prev" title="Understanding Git" href="understanding-git.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #D0D0D0" >
+            <a href="../index.html">
+            <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                v2023-4-21
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+   
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../managing-code-and-data.html">Managing Code and Data</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version-control.html">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-git-ecosystem.html">The Git ecosystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html">Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAIR-principles.html">FAIR principles, formats, and reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-git.html">Understanding Git</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Taming Git</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-places-perspective">The places perspective</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#repository">Repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#branch">Branch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#workspace-aka-worktree-or-working-directory">Workspace (aka Worktree or Working Directory)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#index-aka-staging-area">Index (aka Staging Area)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stash-stack">Stash stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#default-places">Default places</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#finding-features">Finding features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#built-in-help-and-manuals">Built-in help and manuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partial-clone-functionality">Partial clone functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#graphical-interfaces">Graphical interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="specialized-data-stores.html">Specialized Data Stores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-management.html">Release Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="good-practices-example.html">Good practices example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="go-with-the-flow.html">Go with the flow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IT-infrastructure.html">IT Infrastructure</a></li>
+</ul>
+
+   <p class="caption">
+     <span class="caption-text">References:</span>
+   </p>
+   <ul>
+        <li class="toctree-l1"><a href= "../genindex.html">Index</a></li>
+   </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #D0D0D0" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LAMASUS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../managing-code-and-data.html">Managing Code and Data</a></li>
+      <li class="breadcrumb-item active">Taming Git</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="taming-git">
+<h1>Taming Git<a class="headerlink" href="#taming-git" title="Permalink to this heading"></a></h1>
+<p>Basic Git use can be quite simple. You most likely have a Git client built into
+the integrated development environment of your programming language of choice.
+Common operations are then a few clicks away. Also, the GitHub and GitLab cloud
+platforms allow repositories hosted on them to be manipulated through a web
+browser.</p>
+<p id="index-0">However, for non-trivial workflows you will need good sight on what Git does and
+require a way to access more advanced features. It is therefore highly
+recommended to install the full-featured official Git command line client. When
+you use Linux or MacOS, you can install it via a package manager. A <a class="reference external" href="https://git-scm.com/downloads">Windows
+installer</a> is available on the Git website.
+Another reason to have the official Git client installed is that when you search
+the Internet for information on Git, the given solutions and examples mostly
+reference it and rarely other clients.</p>
+<p>Learning about all the features that Git has is a major task and hence is not
+advisable. Already having some idea of what feature you need, even if you have
+never used it and do not know what it is called, is very useful. It is also
+helpful to then have an easy way to find out how to invoke the feature. This
+page gives you a strategy for attaining both.</p>
+<section id="the-places-perspective">
+<h2>The places perspective<a class="headerlink" href="#the-places-perspective" title="Permalink to this heading"></a></h2>
+<p>Looking at Git from the perspective of the various places where Git can hold
+copies of the file tree under management requires familiarity with relatively
+few concepts. Gaining that perspective will give you a good idea of what is
+going on and needs doing: you will be aware of where files and changes are
+located, where they can go, and why you might want that. These places are named
+and explained below. Memorize these.</p>
+<section id="repository">
+<span id="index-1"></span><h3>Repository<a class="headerlink" href="#repository" title="Permalink to this heading"></a></h3>
+<p>A Git repository holds the history of one or more trees of files as a series of
+immutable <a class="reference internal" href="understanding-git.html#commit"><span class="std std-ref">commits</span></a>. It encodes files in an efficient storage
+format and can be connected to repositories located elsewhere to synchronize
+content.</p>
+<section id="local-repository">
+<span id="index-2"></span><h4>Local repository<a class="headerlink" href="#local-repository" title="Permalink to this heading"></a></h4>
+<p>A Git repository located on your local machine. Since you own the repository you
+can structure it and connect it to other repositories as you see fit. You can
+replace (not change) commits in your local repository to cover up mistakes
+before synchronizing to a remote repository that others can see.</p>
+</section>
+<section id="remote-repository">
+<h4>Remote repository<a class="headerlink" href="#remote-repository" title="Permalink to this heading"></a></h4>
+<p>A Git repository located on a remote server, typically accessed by multiple
+users for collaborating on making and sharing changes. Accessed via a URL for
+one of <a class="reference external" href="https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols">the supported protocols</a>. The server
+may require authentication.</p>
+</section>
+<section id="upstream-repository">
+<span id="upstream"></span><h4>Upstream repository<a class="headerlink" href="#upstream-repository" title="Permalink to this heading"></a></h4>
+<p>The remote Git repository that holds the canonical/validated/verified/official
+version of the files. Significant changes made relative to connected
+repositories will flow here, possibly after passing review and acceptance. The
+upstream repository is the focal point of the community and hence tends to be
+hosted on GitHub or another cloud platform with attached issue tracking and
+other collaboration services.</p>
+<p>So why is it called “upstream”? Well, though the significant changes flow
+upstream, most of the synchronization flows the other way: the community wants
+to stay in-sync with the latest and greatest official versions and pulls
+frequently from the upstream repository.</p>
+</section>
+</section>
+<section id="branch">
+<span id="index-3"></span><h3>Branch<a class="headerlink" href="#branch" title="Permalink to this heading"></a></h3>
+<p>A Git repository can hold multiple file trees that evolve in parallel. These are
+called <strong>branches</strong>. This may sound confusing: how can trees be branches? The
+reason is that the word “branch” refers to a bifurcation in the graph of
+commits, not to a subdirectory of a file tree.</p>
+<a class="reference internal image-reference" href="../_images/branching_optimized.svg"><img alt="../_images/branching_optimized.svg" class="align-center" src="../_images/branching_optimized.svg" width="700" /></a>
+<p>Up until the bifurcation, the branch and its parent branch share the same commit
+history. After the bifurcation, they diverge with different commits made to
+each. Logically, a new branch is a copy of the parent branch, but no actual data
+needs to be copied to bifurcate the commit graph: branching is very cheap.</p>
+<p>One reason for branching is to start a parallel track of development, for
+example to implement an experimental feature in code, or to adapt a dataset for
+an exceptional use case. You can also branch in support of a release workflow,
+branching from the main/master branch on a major release, and applying only
+commits that fix bugs to that branch, resulting in one or more minor/patch
+releases. There are many reasons to branch, and many workflows that can be
+enabled by that. To learn more, see the <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows">Branching Workflows section</a> of the Pro
+Git book.</p>
+<p id="index-4">Commits made to one branch can be applied to another branch in the same
+repository thereby reducing divergence, for example to consolidate a feature
+developed in a feature branch into the main/master branch. This is called
+<a class="reference external" href="https://www.atlassian.com/git/tutorials/using-branches/git-merge">merging</a>
+or, when preserving a linear history, <a class="reference external" href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase">rebasing</a>. You
+can also be selective and <a class="reference external" href="https://www.atlassian.com/git/tutorials/cherry-pick">cherry pick</a> commits. Git offers
+advanced algorithms and assistance that make it practical to converge branches.</p>
+</section>
+<section id="workspace-aka-worktree-or-working-directory">
+<span id="index-5"></span><h3>Workspace (aka Worktree or Working Directory)<a class="headerlink" href="#workspace-aka-worktree-or-working-directory" title="Permalink to this heading"></a></h3>
+<p>A tree of files on your filesystem associated with a branch commit in a local
+repository. The files in the workspace are what you use or modify. Git will keep
+track of any modifications relative to this branch commit.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can associate additional workspaces with your local repository, for
+example to hold the content of different branches, but most common is to have
+a single workspace and <strong>switch</strong> it between branches.</p>
+</div>
+</section>
+<section id="index-aka-staging-area">
+<span id="index-6"></span><h3>Index (aka Staging Area)<a class="headerlink" href="#index-aka-staging-area" title="Permalink to this heading"></a></h3>
+<p>The index is where you shortlist (stage) changes made in a workspace before
+committing them. This allows you to collect a subset of changes that belong
+together and can thereby more easily be reviewed, described with a commit
+message, and merged or rebased later.</p>
+<p>When committing, the indexed changes are added as a new commit to the branch in
+the local repository associated with the workspace, and then the workspace is
+re-associated with this new branch commit: only the remaining changes will
+thereby show when having Git display what changed in the workspace.</p>
+</section>
+<section id="stash-stack">
+<span id="index-7"></span><h3>Stash stack<a class="headerlink" href="#stash-stack" title="Permalink to this heading"></a></h3>
+<p>The stash stack is where you can have Git <strong>stash</strong> uncommitted changes for later
+work. It is associated with a local repository. You can stash changes present in
+the workspace and index (staged changes) and later retrieve them.</p>
+<p>Stashing allows you to quickly clean up your workspace without losing your
+changes: certain operations require a “clean” workspace (a workspace without
+changes relative to the branch). It also enables you to quickly stage and commit
+other changes first, and then return to the previously staged work.</p>
+<p>You can add multiple stashes to the stack, and will typically retrieve them in
+reverse order.</p>
+</section>
+<section id="default-places">
+<h3>Default places<a class="headerlink" href="#default-places" title="Permalink to this heading"></a></h3>
+<p id="index-8">When starting to work with a Git repository, it typically already exists on a
+remote server. You obtain a local copy of the remote repository by using the
+<strong>clone</strong> command. This will result in the following set of default places:</p>
+<ul class="simple">
+<li><p>A local repository with a synchronization connection to the remote repository.</p></li>
+<li><p>A single workspace holding the file tree matching the last/head commit of the
+main/master branch.</p></li>
+<li><p>An empty index and stash stack.</p></li>
+</ul>
+<p>This allows you to immediately get going with making changes or using the files.
+The repository is held in a hidden <code class="docutils literal notranslate"><span class="pre">.git</span></code> subdirectory of the root of the
+workspace.</p>
+</section>
+</section>
+<section id="finding-features">
+<h2>Finding features<a class="headerlink" href="#finding-features" title="Permalink to this heading"></a></h2>
+<p>Memorizing the places explained in the previous section and their mutual
+relationships enables you to understand where files and changes are located and
+should go, in order to progress your workflow. You can then predict that there
+must exist Git features that do that or help out with that.</p>
+<p>For example, you can infer that there must be ways to copy files from a
+repository to a workspace (<strong>checkout</strong>) and <em>vice versa</em> (<strong>commit</strong>); to
+synchronize from a local repository to a <strong>remote</strong> repository (<strong>push</strong>) and
+<em>vice versa</em> (<strong>fetch</strong>); to display changes (<strong>diff</strong>) and commits (<strong>log</strong>);
+to <strong>add</strong> changes to or remove them from the index or a <strong>stash</strong>; to list the
+contents of the index or stash stack; to <strong>branch</strong> and <strong>merge</strong>; and so on.</p>
+<p>But how to find these predicted features?</p>
+<p>The first step is to find out what the command that provides the feature is
+probably called. Some frequently used commands were already named in <strong>bold</strong>
+above. <a class="reference external" href="https://ndpsoftware.com/git-cheatsheet.html">This handy interactive Git cheat sheet</a> shows you Git commands
+operating between the places discussed above and thereby allows you to explore
+the command space from the places perspective. Once you have a good candidate
+for the command name, you can explore <a class="reference external" href="https://git-scm.com/docs/user-manual">the detailed documentation</a> or quickly display build-in help or a
+manual as detailed in the next section.</p>
+<p>When in need of further guidance, you can easily find answers by searching with
+Google or <a class="reference external" href="https://stackoverflow.com">Stack Overflow</a> since the huge Git user
+base will no doubt have asked the particular question you have, and likely has
+linked or selected good answers to it.</p>
+<p id="index-9">To learn more, see the comprehensive introductory and reference <a class="reference external" href="https://git-scm.com/doc">videos,
+documentation, and even a book</a> available on the Git
+website.</p>
+</section>
+<section id="built-in-help-and-manuals">
+<h2>Built-in help and manuals<a class="headerlink" href="#built-in-help-and-manuals" title="Permalink to this heading"></a></h2>
+<p id="index-10">When you already know which command you need, but forgot the precise syntax or
+options, the official Git command line client offers built-in help. By invoking</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git --help
+</pre></div>
+</div>
+<p>you get get a list of common commands. By invoking</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git &lt;command&gt; --help
+</pre></div>
+</div>
+<p>you get the synopsis, description, and options of the given Git command.</p>
+<p id="index-11">On Linux/MacOS, invoking</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>man git
+</pre></div>
+</div>
+<p>will display the main manual in the shell, and invoking</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>man git &lt;command&gt;
+</pre></div>
+</div>
+<p>will show the manual of the given Git command.</p>
+<p>On Windows such manuals are not available by default, but you can display them
+in your browser by searching the <a class="reference external" href="https://man.archlinux.org/">Arch Linux manual pages</a> site, or any of many similar sites.</p>
+<p>To make such a search quick, you can set it as a <a class="reference external" href="https://support.google.com/chrome/answer/95426?hl=en&amp;co=GENIE.Platform%3DDesktop">site search shortcut in Chrome</a>,
+or a <a class="reference external" href="https://support.mozilla.org/en-US/kb/how-search-from-address-bar">search keyword in Firefox</a>. Using the
+shortcut/keyword “man” is a good choice. This is also handy when using
+MacOS/Linux since manual pages are more readable in a web browser than a shell.</p>
+</section>
+<section id="partial-clone-functionality">
+<span id="index-12"></span><h2>Partial clone functionality<a class="headerlink" href="#partial-clone-functionality" title="Permalink to this heading"></a></h2>
+<p>When using Git for managing data, repositories can get large. Using the <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git LFS</a> (Large File Storage) extension
+makes storing large files performant. But cloning a big repository can still
+take a lot of time, particularly when the repository is located remotely on the
+Internet. The reason is that Git repositories contain the complete history of
+all files, and this complete history is by default downloaded when running the
+Git <strong>clone</strong> command.</p>
+<p>Fortunately, Git supports <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/partial_clone.html">partial clone functionality</a> that downloads
+only a subset of the files, and downloads further files only as needed on
+<strong>checkout</strong>.</p>
+</section>
+<section id="graphical-interfaces">
+<span id="index-13"></span><h2>Graphical interfaces<a class="headerlink" href="#graphical-interfaces" title="Permalink to this heading"></a></h2>
+<p>Most integrated development environments and many code editors allow you to
+perform Git operations via menus or buttons. For example, the image below shows
+the Git menu of Visual Studio Code.</p>
+<a class="reference internal image-reference" href="../_images/VSCode_Git_menu.png"><img alt="../_images/VSCode_Git_menu.png" class="align-center" src="../_images/VSCode_Git_menu.png" style="width: 700px;" /></a>
+<p>When you do most of your work in such an environment or editor, using the
+graphical interface is handy. Some graphical interfaces have very convenient
+support for merging and dealing with pull requests. But beware that not all Git
+functionality will be available, and that the examples that you can find online
+via a search engine are unlikely to show how to do something with the particular
+graphical interface that you are using. That is why you will still need the
+official Git client every now and then.</p>
+<p>When you use several environments and editors and do not want to learn all the
+different graphical interfaces, using the official Git client by default may be
+preferable.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="understanding-git.html" class="btn btn-neutral float-left" title="Understanding Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="specialized-data-stores.html" class="btn btn-neutral float-right" title="Specialized Data Stores" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Albert Brouwer, IIASA.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
