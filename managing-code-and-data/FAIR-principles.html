@@ -33,7 +33,7 @@
             <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v2023-4-21
+                v2023-10-30
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -64,7 +64,7 @@
 <li class="toctree-l2"><a class="reference internal" href="taming-git.html">Taming Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="specialized-data-stores.html">Specialized Data Stores</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release-management.html">Release Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="good-practices-example.html">Good practices example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="good-practices-examples.html">Good practices examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="go-with-the-flow.html">Go with the flow</a></li>
 </ul>
 </li>
@@ -122,19 +122,25 @@ Reusable (FAIR) can involve a considerable separate effort. By combining the
 with other good practices while keeping FAIR in mind, you can create a custom
 data management workflow that accommodates several FAIR concerns:</p>
 <ul class="simple">
-<li><p>Managing metadata and data together using Git keeps both co-located and in-sync.</p></li>
+<li><p>Managing metadata and data together using Git keeps both co-located and
+in-sync.</p></li>
 <li><p><a class="reference internal" href="release-management.html#zenodo-release"><span class="std std-ref">Publishing on Zenodo</span></a> makes your data (and your code!)
 findable, provides a unique persistent identifier (<a class="reference external" href="https://www.go-fair.org/fair-principles/f3-metadata-clearly-explicitly-include-identifier-data-describe/">F3</a>),
-and registers metadata (<a class="reference external" href="https://www.go-fair.org/fair-principles/f4-metadata-registered-indexed-searchable-resource/">F4</a>.</p></li>
-<li><p><a class="reference internal" href="release-management.html#release-github-gitlab"><span class="std std-ref">Releasing on GitHub or GitLab</span></a>) improves
+and registers metadata (<a class="reference external" href="https://www.go-fair.org/fair-principles/f4-metadata-registered-indexed-searchable-resource/">F4</a>).</p></li>
+<li><p><a class="reference internal" href="release-management.html#release-github-gitlab"><span class="std std-ref">Releasing on GitHub or GitLab</span></a> improves
 accessibility, in particular by allowing for robust automated retrieval.</p></li>
 </ul>
 <p>Moreover, using a hosted Git repository automatically complies with or supports
 aspects of FAIR such as:</p>
 <ul class="simple">
+<li><p><a class="reference external" href="https://www.go-fair.org/fair-principles/542-2/">A1: (Meta)data are retrievable by their identifier using a standardised
+communications protocol</a></p>
+<ul>
 <li><p><a class="reference external" href="https://www.go-fair.org/fair-principles/a1-1-protocol-open-free-universally-implementable/">A1.1: The protocol is open, free and universally implementable</a></p></li>
 <li><p><a class="reference external" href="https://www.go-fair.org/fair-principles/a1-2-protocol-allows-authentication-authorisation-required/">A1.2: The protocol allows for an authentication and authorisation procedure
 where necessary</a></p></li>
+</ul>
+</li>
 <li><p><a class="reference external" href="https://www.go-fair.org/fair-principles/r1-2-metadata-associated-detailed-provenance/">R1.2: (Meta)data are associated with detailed provenance</a></p></li>
 </ul>
 <p>In support of FAIR, prefer standard data formats and metadata formats that:</p>
@@ -145,7 +151,8 @@ where necessary</a></p></li>
 <li><p>Are machine-readable.</p></li>
 </ul>
 <p>For example, <a class="reference external" href="https://en.wikipedia.org/wiki/NetCDF">NetCDF</a> is a good choice
-— picking Excel is problematic for many reasons.</p>
+— picking Excel is problematic for many reasons, for example on account of
+<a class="reference external" href="https://www.nature.com/articles/d41586-021-02211-4">autocorrect errors</a>.</p>
 </section>
 <section id="text-formats">
 <span id="index-1"></span><h2>Text formats<a class="headerlink" href="#text-formats" title="Permalink to this heading"></a></h2>
@@ -190,14 +197,6 @@ be important to the code and data that you are managing, the usage context, and
 the audience that you are trying to reach. In principle, the more formats that
 you use for adding metadata, the better. In practice, this takes effort. Use
 common sense to make a selection.</p>
-<div class="admonition-todo admonition" id="id3">
-<p class="admonition-title">Todo</p>
-<p>Unfortunately, particular fields recur…</p>
-</div>
-<div class="admonition-todo admonition" id="id4">
-<p class="admonition-title">Todo</p>
-<p>Include LAMASUS-specific minimum field list.</p>
-</div>
 </section>
 <section id="licensing">
 <h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this heading"></a></h2>
@@ -216,7 +215,8 @@ or a permissive license such as <a class="reference external" href="https://en.w
 for data or the <a class="reference external" href="https://en.wikipedia.org/wiki/MIT_License">MIT license</a> for
 code. Derivative works of <a class="reference external" href="https://en.wikipedia.org/wiki/Copyleft">copyleft</a>
 material may require a compatible copyleft license. A copyleft license may be
-preferred when the freedom of derivative work should be ensured.</p>
+preferred when the freedom of derivative work should be ensured. Further
+guidance on choosing a open source license can be found on <a class="reference external" href="https://choosealicense.com/">choosealicense.com</a>.</p>
 <p>You can <a class="reference external" href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository">license a Git repository</a>
 and thereby the files contained in it. This typically involves including a file
 detailing the license in the repository. For repositories hosted on GitHub, the
@@ -233,18 +233,19 @@ online tool to create a CFF file.</p>
 licensing conditions. In such a case, you need to carefully specify which
 license pertains to what, or break up the tree of files under management such
 that repositories hold only files subject to a single license. These separate
-repositories can be combined into a single tree via <a class="reference internal" href="workflows.html#submodule-references"><span class="std std-ref">Git submodule
-references</span></a>.</p>
+repositories can be combined into a single tree via <span class="xref std std-ref">Git submodule
+references</span>.</p>
 </section>
 <section id="reproducibility">
 <span id="index-5"></span><h2>Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this heading"></a></h2>
 <p>Reproducibility is a basic tenet of science. Following the FAIR principles goes
-some way towards making your research reproducible. Also using a Git-based
-workflow allows you or others to go back in time and retrieve old code or data
-versions to reproduce prior results. When you expect that your current work may
-need to be reproduced in the future, you can have <a class="reference internal" href="release-management.html#tagging"><span class="std std-ref">Git tag the current
-commit or use more involved release management</span></a> to enable people to easily
-return to this point in your file tree’s history.</p>
+some way towards making your research reproducible. In addition using a
+Git-based workflow allows you or others to go back in time and retrieve old code
+or data versions to reproduce prior results. When you expect that a particular
+version of your files will be needed to reproduce your research in the future,
+you can have <a class="reference internal" href="release-management.html#tagging"><span class="std std-ref">Git tag that commit or use more involved release
+management</span></a> to enable people
+to easily return to that point in your file tree’s history.</p>
 <p>Even when all FAIR principles have been followed, just providing the data may
 not be enough for reproducibility. Also providing the actual code that does the
 data wrangling is often necessary to make it practical to reproduce results. But

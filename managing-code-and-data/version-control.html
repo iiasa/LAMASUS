@@ -33,7 +33,7 @@
             <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v2023-4-21
+                v2023-10-30
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -57,7 +57,7 @@
 <li class="toctree-l2"><a class="reference internal" href="taming-git.html">Taming Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="specialized-data-stores.html">Specialized Data Stores</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release-management.html">Release Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="good-practices-example.html">Good practices example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="good-practices-examples.html">Good practices examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="go-with-the-flow.html">Go with the flow</a></li>
 </ul>
 </li>
@@ -101,14 +101,15 @@
 <span class="target" id="repository"></span><p id="index-0">A version control system (VCS) is a software tool that allows you to manage a
 tree of <em>source code</em> files and keep track of who changes what, when, and why.
 Version control <strong>repositories</strong> store the whole history of changes so that any
-past version of the file tree can be recovered. In particular when collaborating
-on code with multiple people, using a VCS is a must.</p>
+past version of the file tree can be recovered. A repository is therefore a
+place where you can manage a particular tree of files with careful accounting.
+When collaborating on code with multiple people, using a VCS is a must.</p>
 <p>But can a VCS be pressed into use to manage data as well as code? In principle,
 yes: a dataset is just another collection of files. But data can be much larger
 than code and thereby cripple the performance of the VCS.</p>
 <p>Fortunately, a modern VCS running on modern hardware can be decently performant.
 Moreover, extensions have been invented that allow VCSs to handle large files
-efficiently. It therefore makes sense to use a VCS as the basis for a code and
+efficiently. It therefore makes sense to use a VCS as the basis for a code <em>and</em>
 data management approach.</p>
 </section>
 

@@ -33,7 +33,7 @@
             <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v2023-4-21
+                v2023-10-30
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -57,7 +57,7 @@
 <li class="toctree-l2"><a class="reference internal" href="taming-git.html">Taming Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="specialized-data-stores.html">Specialized Data Stores</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release-management.html">Release Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="good-practices-example.html">Good practices example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="good-practices-examples.html">Good practices examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="go-with-the-flow.html">Go with the flow</a></li>
 </ul>
 </li>
@@ -102,8 +102,8 @@
 the Git ecosystem for managing code and data, it is important to gain a better
 understanding of Git itself. Instead of diving into Git’s many features, which
 can be confusing, let’s take a step back to gain an overview.</p>
-<a class="reference internal image-reference" href="../_images/commits_optimized.svg"><img alt="../_images/commits_optimized.svg" class="align-center" src="../_images/commits_optimized.svg" width="700" /></a>
-<p id="commit">In essence, Git allows you to tightly manage the evolution of trees of files.
+<a class="reference internal image-reference" href="../_images/commits_optimized.svg" id="commit"><img alt="../_images/commits_optimized.svg" class="align-center" id="commit" src="../_images/commits_optimized.svg" width="700" /></a>
+<p>In essence, Git allows you to tightly manage the evolution of trees of files.
 Each new tree version resulting from changes to a tree (a <strong>commit</strong>) is stored by
 Git in a repository in unmodifiable and retrievable form, with a unique
 identifier.<a class="footnote-reference brackets" href="#f1" id="id1">1</a> This unique identifier is a so-called <strong>commit hash</strong><a class="footnote-reference brackets" href="#f2" id="id2">2</a> that
@@ -114,7 +114,7 @@ is obtained by applying a cryptographic hash function to:</p>
 <li><p>The commit message</p></li>
 <li><p>The commit author</p></li>
 <li><p>The committer (not necessarily the same as the author)</p></li>
-<li><p>The date</p></li>
+<li><p>The date + time</p></li>
 </ul>
 <p>None of these can change without invalidating the commit hash. This also holds
 for the parent of the parent, all the way back to an empty initial repository:

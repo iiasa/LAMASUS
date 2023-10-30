@@ -33,7 +33,7 @@
             <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v2023-4-21
+                v2023-10-30
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -95,16 +95,22 @@
 <a class="reference external" href="https://en.wikipedia.org/wiki/GitLab">GitLab</a> instance is available. It
 provides code hosting and development collaboration features that are very
 similar in scope to GitHub, but by virtue of self-hosting the limitations of
-data sizes and GitHub Actions (the GitLab equivalent is called <a class="reference external" href="https://docs.gitlab.com/ee/ci/">GitLab CI/CD</a>) are circumvented. <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git LFS</a> is supported without payment.
-<a class="footnote-reference brackets" href="#f1" id="id2">1</a></p>
+data sizes and GitHub Actions (the GitLab equivalent is called <a class="reference external" href="https://docs.gitlab.com/ee/ci/">GitLab CI/CD</a>) are circumvented. <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git Large File Storage</a> (LFS) is supported without
+payment.<a class="footnote-reference brackets" href="#f1" id="id2">1</a></p>
 <p>To get started with GitLab, browse to the LAMASUS <a class="reference external" href="https://gitlab.iiasa.ac.at">GitLab instance</a> and register an account <em>with your institutional
 email address</em> by clicking on the <strong>Register now</strong> link at the bottom of the
 page. Should your email address not be recognized as belonging to a domain of a
 LAMASUS partner institution, the registration will fail and you will see an
 error message requesting you to send an e-mail to still request access.</p>
-<p>When using the SSH protocol, use port 2222 to connect. The regular SSH port 22
-is not supported from all locations for this GitLab instance. You can do so by
-adding the port number to the the git SSH URL as follows <code class="docutils literal notranslate"><span class="pre">ssh://git&#64;gitlab.iiasa.ac.at:2222/lamasus/repository.git</span></code>.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>When using the SSH protocol, the regular SSH port 22 is currently not usable
+when connecting from the IIASA-internal network. Until the IIASA ICT
+department fixes the GitLab deployment you will need to connect via port 2222
+instead when using a Git client on the IIASA-internal network. You can do so
+by adding the port number to the the Git SSH URL as follows
+<code class="docutils literal notranslate"><span class="pre">ssh://git&#64;gitlab.iiasa.ac.at:2222/lamasus/repository.git</span></code>.</p>
+</div>
 <p>For security, two-factor authentication (2FA) is required. See the <a class="reference external" href="https://docs.gitlab.com/ee/user/profile/account/two_factor_authentication.html">GitLab
 documentation on 2FA</a>
 for details. The time-based one-time passwords (TOPT) 2FA option can be
@@ -112,22 +118,26 @@ accommodated via a TOTP app on a smartphone or tablet. If you do not have one
 installed, TOTP apps are readily available via app stores. If you prefer a free
 TOTP app that is open-source and without spyware, <a class="reference external" href="https://en.wikipedia.org/wiki/FreeOTP">FreeOTP</a> or its FreeOTP+ fork (which is more
 user friendly) are good options.</p>
-<p>For now 0Auth authentication has not been enabled for the LAMASUS GitLab
-instance. Until that is the case, 2FA requires the use of <a class="reference external" href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html">personal access
-tokens</a>
-when using the LFS feature, and the https protocol should be used in that
-case.</p>
-<div class="admonition-todo admonition" id="id3">
-<p class="admonition-title">Todo</p>
-<p>Link to <a class="reference external" href="https://gitlab.iiasa.ac.at/k8s/gitlab-at-iiasa/-/issues/5">to-be ICT 0Auth/GCM/PAT documentation</a>.</p>
+<p>Until a more sensible authentication scheme is enabled on the GitLab instance,
+2FA requires the use of <a class="reference external" href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html">personal access tokens</a> when
+using the HTTPS protocol. You can insert a GitLab personal access token into a
+Git HTTPS URL as follows: <code class="docutils literal notranslate"><span class="pre">https://&lt;GitLab</span> <span class="pre">or</span> <span class="pre">Token</span> <span class="pre">User</span>
+<span class="pre">Name&gt;:&lt;Token&gt;&#64;gitlab.iiasa.ac.at/&lt;Group&gt;/&lt;Repo</span> <span class="pre">Name&gt;.git</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using Git LFS, you need to use the HTTPS protocol.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you get an error such as <code class="docutils literal notranslate"><span class="pre">SSL:</span> <span class="pre">CERTIFICATE_VERIFY_FAILED</span></code> it is
+because IIASA ICT has failed to install a proper certificate. To make things
+work until this issue is fixed, you can use the <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">http.sslVerify=false</span></code>
+Git command line option or set the corresponding configuration setting on
+your repo. Do <strong>not</strong> do this for your global Git configuration: it is
+insecure.</p>
 </div>
 <p>The GitLab account approval process is manual and may take a while. Once your
 account has been activated, request access to the LAMASUS GitLab group by…</p>
-<div class="admonition-todo admonition" id="id4">
-<p class="admonition-title">Todo</p>
-<p>Add details on becoming part of the project’s GitLab group via a per-project
-support email.</p>
-</div>
 <p>Visit the <a class="reference external" href="https://docs.gitlab.com/ee/tutorials/">GitLab online tutorials</a> to
 learn more about the platform.</p>
 <hr class="docutils" />
