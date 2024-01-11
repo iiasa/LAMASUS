@@ -105,8 +105,7 @@ error message requesting you to send an e-mail to still request access.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>When using the SSH protocol, the regular SSH port 22 is currently not usable
-when connecting from the IIASA-internal network. Until the IIASA ICT
-department fixes the GitLab deployment you will need to connect via port 2222
+when connecting from the IIASA-internal network. Until the deployment is improved you will need to connect via port 2222
 instead when using a Git client on the IIASA-internal network. You can do so
 by adding the port number to the the Git SSH URL as follows
 <code class="docutils literal notranslate"><span class="pre">ssh://git&#64;gitlab.iiasa.ac.at:2222/lamasus/repository.git</span></code>.</p>
@@ -129,9 +128,9 @@ Git HTTPS URL as follows: <code class="docutils literal notranslate"><span class
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>When you get an error such as <code class="docutils literal notranslate"><span class="pre">SSL:</span> <span class="pre">CERTIFICATE_VERIFY_FAILED</span></code> it is
-because IIASA ICT has failed to install a proper certificate. To make things
-work until this issue is fixed, you can use the <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">http.sslVerify=false</span></code>
+<p>When you get an error such as <code class="docutils literal notranslate"><span class="pre">SSL:</span> <span class="pre">CERTIFICATE_VERIFY_FAILED</span></code> a working certificate has
+not been installed on the server side. To make things work
+while that is the case, you can use the <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">http.sslVerify=false</span></code>
 Git command line option or set the corresponding configuration setting on
 your repo. Do <strong>not</strong> do this for your global Git configuration: it is
 insecure.</p>
