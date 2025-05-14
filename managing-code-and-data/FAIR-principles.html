@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAIR principles, formats, and reproducibility &mdash; LAMASUS  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #D0D0D0" >
-            <a href="../index.html">
-            <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v2023-10-30
+                v2025-05-14
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -92,7 +97,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../managing-code-and-data.html">Managing Code and Data</a></li>
       <li class="breadcrumb-item active">FAIR principles, formats, and reproducibility</li>
       <li class="wy-breadcrumbs-aside">
@@ -104,13 +109,13 @@
            <div itemprop="articleBody">
              
   <section id="fair-principles-formats-and-reproducibility">
-<span id="index-0"></span><h1>FAIR principles, formats, and reproducibility<a class="headerlink" href="#fair-principles-formats-and-reproducibility" title="Permalink to this heading"></a></h1>
+<span id="index-0"></span><h1>FAIR principles, formats, and reproducibility<a class="headerlink" href="#fair-principles-formats-and-reproducibility" title="Link to this heading"></a></h1>
 <section id="fair-principles">
-<h2>FAIR principles<a class="headerlink" href="#fair-principles" title="Permalink to this heading"></a></h2>
+<h2>FAIR principles<a class="headerlink" href="#fair-principles" title="Link to this heading"></a></h2>
 <figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="../_images/FAIR_data_principles.jpg"><img alt="../_images/FAIR_data_principles.jpg" src="../_images/FAIR_data_principles.jpg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">© Sangya Pundir</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+<p><span class="caption-text">© Sangya Pundir</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>For LAMASUS we are obliged to abide by <a class="reference external" href="https://www.go-fair.org/fair-principles/">FAIR principles</a> for
@@ -155,11 +160,11 @@ where necessary</a></p></li>
 <a class="reference external" href="https://www.nature.com/articles/d41586-021-02211-4">autocorrect errors</a>.</p>
 </section>
 <section id="text-formats">
-<span id="index-1"></span><h2>Text formats<a class="headerlink" href="#text-formats" title="Permalink to this heading"></a></h2>
+<span id="index-1"></span><h2>Text formats<a class="headerlink" href="#text-formats" title="Link to this heading"></a></h2>
 <p>Text files are human-readable and hence accessible. Prefer a text format that is
 also machine-readable such as <a class="reference external" href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/JSON">JSON</a>, or <a class="reference external" href="https://en.wikipedia.org/wiki/YAML">YAML</a> when storing relatively small data for
-which the inefficiency of text-based formats matters little.<a class="footnote-reference brackets" href="#f1" id="id1">1</a> Ensure that
-the text flows across multiple lines<a class="footnote-reference brackets" href="#f2" id="id2">2</a> for readability and to enable Git
+which the inefficiency of text-based formats matters little.<a class="footnote-reference brackets" href="#f1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> Ensure that
+the text flows across multiple lines<a class="footnote-reference brackets" href="#f2" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> for readability and to enable Git
 to asses, merge, and display line-based differences when making changes. This
 makes such data very easy to manage.</p>
 <div class="admonition note" id="index-2">
@@ -180,7 +185,7 @@ automatically convert newline encoding on commit or checkout.</p>
 </div>
 </section>
 <section id="metadata-formats">
-<span id="index-4"></span><h2>Metadata formats<a class="headerlink" href="#metadata-formats" title="Permalink to this heading"></a></h2>
+<span id="index-4"></span><h2>Metadata formats<a class="headerlink" href="#metadata-formats" title="Link to this heading"></a></h2>
 <p>Several <a class="reference external" href="https://www.go-fair.org/fair-principles/">FAIR principles</a> give
 guidance on metadata. The principle:</p>
 <p><a class="reference external" href="https://www.go-fair.org/fair-principles/r1-3-metadata-meet-domain-relevant-community-standards/">R1.3: (Meta)data meet domain-relevant community standards</a></p>
@@ -199,7 +204,7 @@ you use for adding metadata, the better. In practice, this takes effort. Use
 common sense to make a selection.</p>
 </section>
 <section id="licensing">
-<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this heading"></a></h2>
+<h2>Licensing<a class="headerlink" href="#licensing" title="Link to this heading"></a></h2>
 <p>The FAIR principle</p>
 <blockquote>
 <div><p><a class="reference external" href="https://www.go-fair.org/fair-principles/r1-1-metadata-released-clear-accessible-data-usage-license/">R1.1. (Meta)data are released with a clear and accessible data usage license</a></p>
@@ -216,7 +221,7 @@ for data or the <a class="reference external" href="https://en.wikipedia.org/wik
 code. Derivative works of <a class="reference external" href="https://en.wikipedia.org/wiki/Copyleft">copyleft</a>
 material may require a compatible copyleft license. A copyleft license may be
 preferred when the freedom of derivative work should be ensured. Further
-guidance on choosing a open source license can be found on <a class="reference external" href="https://choosealicense.com/">choosealicense.com</a>.</p>
+guidance on choosing an open source license can be found on <a class="reference external" href="https://choosealicense.com/">choosealicense.com</a>.</p>
 <p>You can <a class="reference external" href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository">license a Git repository</a>
 and thereby the files contained in it. This typically involves including a file
 detailing the license in the repository. For repositories hosted on GitHub, the
@@ -233,11 +238,11 @@ online tool to create a CFF file.</p>
 licensing conditions. In such a case, you need to carefully specify which
 license pertains to what, or break up the tree of files under management such
 that repositories hold only files subject to a single license. These separate
-repositories can be combined into a single tree via <span class="xref std std-ref">Git submodule
-references</span>.</p>
+repositories can be combined into a single tree via <a class="reference internal" href="workflows.html#submodule-references"><span class="std std-ref">Git submodule
+references</span></a>.</p>
 </section>
 <section id="reproducibility">
-<span id="index-5"></span><h2>Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this heading"></a></h2>
+<span id="index-5"></span><h2>Reproducibility<a class="headerlink" href="#reproducibility" title="Link to this heading"></a></h2>
 <p>Reproducibility is a basic tenet of science. Following the FAIR principles goes
 some way towards making your research reproducible. In addition using a
 Git-based workflow allows you or others to go back in time and retrieve old code
@@ -261,24 +266,27 @@ repository and include download scripting.</p></li>
 repository containing the code used to perform the processing.</p></li>
 </ul>
 <hr class="docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Compared to binary data, text-based numerical data takes up about a
-factor of three more space at full precision,<a class="footnote-reference brackets" href="#f3" id="id5">3</a> and parsing it may
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Compared to binary data, text-based numerical data takes up about a
+factor of three more space at full precision,<a class="footnote-reference brackets" href="#f3" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> and parsing it may
 require a significant amount of time.</p>
-</dd>
-<dt class="label" id="f2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Formats such as JSON and XML can have all content scrunched onto a
+</aside>
+<aside class="footnote brackets" id="f2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Formats such as JSON and XML can have all content scrunched onto a
 single long line. A “pretty print” option that flows the text across
 multiple lines is available in libraries that write these formats.</p>
-</dd>
-<dt class="label" id="f3"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
-<dd><p>Floating point numbers require special care when represented as text.
+</aside>
+<aside class="footnote brackets" id="f3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
+<p>Floating point numbers require special care when represented as text.
 The full binary precision will only be encoded in the text if you allow for
 sufficient digits of precision instead of truncating with few digits after
 the decimal point when generating the text.</p>
-</dd>
-</dl>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -293,7 +301,7 @@ the decimal point when generating the text.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Albert Brouwer, IIASA.</p>
+    <p>&#169; Copyright 2025, Albert Brouwer, IIASA.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

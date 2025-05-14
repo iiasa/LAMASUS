@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Workflows &mdash; LAMASUS  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #D0D0D0" >
-            <a href="../index.html">
-            <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v2023-10-30
+                v2025-05-14
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -62,6 +67,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#release-on-gitlab-github-and-zenodo">Release on GitLab, GitHub, and Zenodo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#forking-and-pull-requests">Forking and Pull Requests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#caching-datasets">Caching datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#providing-input">Providing input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#returning-output">Returning output</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#referencing-repositories">Referencing repositories</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#referencing-assets">Referencing assets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#custom-workflow">Custom workflow</a></li>
@@ -101,7 +108,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../managing-code-and-data.html">Managing Code and Data</a></li>
       <li class="breadcrumb-item active">Workflows</li>
       <li class="wy-breadcrumbs-aside">
@@ -113,7 +120,7 @@
            <div itemprop="articleBody">
              
   <section id="workflows">
-<span id="index-0"></span><h1>Workflows<a class="headerlink" href="#workflows" title="Permalink to this heading"></a></h1>
+<span id="index-0"></span><h1>Workflows<a class="headerlink" href="#workflows" title="Link to this heading"></a></h1>
 <p>Git gives you the means to set up a <strong>code and data management workflow</strong> that
 fits your use case. The best choice depends on your existing practices, the size
 of your data, whether you collaborate on the code or data, whether collaboration
@@ -132,14 +139,14 @@ synchrony by means of cryptographic checksums, transferring only changes, and
 applying compression.</p>
 </div>
 <section id="manage-files-locally">
-<h2>Manage files locally<a class="headerlink" href="#manage-files-locally" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/user_with_Git.svg"><img alt="../_images/user_with_Git.svg" class="align-center" src="../_images/user_with_Git.svg" width="175" /></a>
+<h2>Manage files locally<a class="headerlink" href="#manage-files-locally" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/user_with_Git.svg"><img alt="../_images/user_with_Git.svg" class="align-center" src="../_images/user_with_Git.svg" style="width: 175px;" /></a>
 <p>To manage, version, and track modifications to a tree of files, you can use Git
 locally on your personal machine. The repository is stored on a local disk.</p>
 </section>
 <section id="manage-files-on-a-server">
-<h2>Manage files on a server<a class="headerlink" href="#manage-files-on-a-server" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/manage_files_on_server.svg"><img alt="../_images/manage_files_on_server.svg" class="align-center" src="../_images/manage_files_on_server.svg" width="200" /></a>
+<h2>Manage files on a server<a class="headerlink" href="#manage-files-on-a-server" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/manage_files_on_server.svg"><img alt="../_images/manage_files_on_server.svg" class="align-center" src="../_images/manage_files_on_server.svg" style="width: 200px;" /></a>
 <p>You can connect your local repository to a remote repository hosted on a Git
 server so that the files you manage reside on the server as well. This enables:</p>
 <ul class="simple">
@@ -156,8 +163,8 @@ with the remote repository later.</p>
 </div>
 </section>
 <section id="collaborate-with-colleagues">
-<h2>Collaborate with colleagues<a class="headerlink" href="#collaborate-with-colleagues" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/collaborate_with_colleagues.svg"><img alt="../_images/collaborate_with_colleagues.svg" class="align-center" src="../_images/collaborate_with_colleagues.svg" width="350" /></a>
+<h2>Collaborate with colleagues<a class="headerlink" href="#collaborate-with-colleagues" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/collaborate_with_colleagues.svg"><img alt="../_images/collaborate_with_colleagues.svg" class="align-center" src="../_images/collaborate_with_colleagues.svg" style="width: 350px;" /></a>
 <p>To collaboratively manage files with colleagues, a repository on your
 institution’s Git server can be used and synchronized selectively to and from
 local Git repositories for each collaborating colleague. To manage how your
@@ -170,8 +177,8 @@ repository. Sharing only quality work makes for productive collaboration.</p>
 </div>
 </section>
 <section id="collaborate-with-the-world">
-<h2>Collaborate with the world<a class="headerlink" href="#collaborate-with-the-world" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/collaborate_with_the_world.svg"><img alt="../_images/collaborate_with_the_world.svg" class="align-center" src="../_images/collaborate_with_the_world.svg" width="400" /></a>
+<h2>Collaborate with the world<a class="headerlink" href="#collaborate-with-the-world" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/collaborate_with_the_world.svg"><img alt="../_images/collaborate_with_the_world.svg" class="align-center" src="../_images/collaborate_with_the_world.svg" style="width: 400px;" /></a>
 <p>To collaborate with anyone anywhere, a repository on GitHub can be used and
 synchronized selectively to and from the local Git repositories for each
 collaborator. Anyone can create a GitHub account.</p>
@@ -181,27 +188,30 @@ documentation hosting, notifications, release management, and so on. GitLab is
 similar.</p>
 </section>
 <section id="manage-large-data-locally">
-<span id="index-1"></span><h2>Manage large data locally<a class="headerlink" href="#manage-large-data-locally" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/user_with_Git_LFS.svg"><img alt="../_images/user_with_Git_LFS.svg" class="align-center" src="../_images/user_with_Git_LFS.svg" width="175" /></a>
+<span id="index-1"></span><h2>Manage large data locally<a class="headerlink" href="#manage-large-data-locally" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/user_with_Git_LFS.svg"><img alt="../_images/user_with_Git_LFS.svg" class="align-center" src="../_images/user_with_Git_LFS.svg" style="width: 175px;" /></a>
 <p>To locally manage, version, and track modifications to large data files, use the
 <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git LFS</a> (Large File Storage)
-extension.</p>
+extension or use <a class="reference external" href="https://dvc.org/">Data Version Control</a> (DVC) in parallel
+to Git with a local cache and remote backup.</p>
 </section>
 <section id="collaborate-on-large-data">
-<h2>Collaborate on large data<a class="headerlink" href="#collaborate-on-large-data" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/collaborate_on_large_data.svg"><img alt="../_images/collaborate_on_large_data.svg" class="align-center" src="../_images/collaborate_on_large_data.svg" width="350" /></a>
-<p>To collaborate on large data managed through Git, host the repository on a
-server that supports <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git LFS</a>
-and synchronize selectively to and from local Git LFS repositories for each
-collaborator. The LAMASUS <a class="reference internal" href="../IT-infrastructure/GitLab.html#gitlab"><span class="std std-ref">GitLab server</span></a> supports Git LFS.
-GitHub also supports Git LFS, but the service is not for free and quite
-expensive. You institutional Git server (if extant) may or may not support LFS.
-Check with your IT department.</p>
+<h2>Collaborate on large data<a class="headerlink" href="#collaborate-on-large-data" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/collaborate_on_large_data.svg"><img alt="../_images/collaborate_on_large_data.svg" class="align-center" src="../_images/collaborate_on_large_data.svg" style="width: 350px;" /></a>
+<p>To collaborate on large data managed through Git, one option is to host the
+repository on a Git server that supports <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git LFS</a> and synchronize selectively to
+and from local Git LFS repositories for each collaborator. The LAMASUS
+<a class="reference internal" href="../IT-infrastructure/GitLab.html#gitlab"><span class="std std-ref">GitLab server</span></a> supports Git LFS. GitHub also supports Git LFS,
+but the service is not for free and quite expensive. You institutional Git
+server (if extant) may or may not support LFS. Check with your IT department.</p>
+<p id="index-2">Another option is to use <a class="reference external" href="https://dvc.org/">Data Version Control</a> (DVC) in
+parallel to Git with <a class="reference external" href="https://dvc.org/doc/user-guide/data-management/remote-storage">DVC remote storage</a> that is
+accessible to all collaborators.</p>
 <p>See also the discussion of <a class="reference internal" href="taming-git.html#partial-clone-functionality"><span class="std std-ref">Git’s partial clone functionality</span></a>.</p>
 </section>
 <section id="collaborate-with-colleagues-and-release-on-github-or-gitlab">
-<h2>Collaborate with colleagues and release on GitHub or GitLab<a class="headerlink" href="#collaborate-with-colleagues-and-release-on-github-or-gitlab" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/release_on_GitHub.svg"><img alt="../_images/release_on_GitHub.svg" class="align-center" src="../_images/release_on_GitHub.svg" width="390" /></a>
+<h2>Collaborate with colleagues and release on GitHub or GitLab<a class="headerlink" href="#collaborate-with-colleagues-and-release-on-github-or-gitlab" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/release_on_GitHub.svg"><img alt="../_images/release_on_GitHub.svg" class="align-center" src="../_images/release_on_GitHub.svg" style="width: 390px;" /></a>
 <p>A public GitHub repository can be used to <strong>release</strong> an open-source code base
 or open-access dataset. For publishing large data, release onto a Large File
 Store enabled <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git LFS</a> public
@@ -209,15 +219,15 @@ repository on the LAMASUS <a class="reference internal" href="../IT-infrastructu
 <p>In the diagram above, the user on the left is the <a class="reference internal" href="release-management.html#release-manager"><span class="std std-ref">release manager</span></a>. See the <a class="reference internal" href="release-management.html#release-github-gitlab"><span class="std std-ref">discussion of GitHub/GitLab release management</span></a> for further details.</p>
 </section>
 <section id="release-on-github-and-zenodo">
-<h2>Release on GitHub and Zenodo<a class="headerlink" href="#release-on-github-and-zenodo" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/release_on_GitHub_and_Zenodo.svg"><img alt="../_images/release_on_GitHub_and_Zenodo.svg" class="align-center" src="../_images/release_on_GitHub_and_Zenodo.svg" width="380" /></a>
+<h2>Release on GitHub and Zenodo<a class="headerlink" href="#release-on-github-and-zenodo" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/release_on_GitHub_and_Zenodo.svg"><img alt="../_images/release_on_GitHub_and_Zenodo.svg" class="align-center" src="../_images/release_on_GitHub_and_Zenodo.svg" style="width: 380px;" /></a>
 <p>By making use of the <a class="reference internal" href="release-management.html#zenodo-github"><span class="std std-ref">Zenodo GitHub integration</span></a> you can
 release on GitHub and Zenodo simultaneously and make your release findable and
 DOI citable.</p>
 </section>
 <section id="release-on-gitlab-github-and-zenodo">
-<h2>Release on GitLab, GitHub, and Zenodo<a class="headerlink" href="#release-on-gitlab-github-and-zenodo" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/release_on_GitLab_GitHub_and_Zenodo.svg"><img alt="../_images/release_on_GitLab_GitHub_and_Zenodo.svg" class="align-center" src="../_images/release_on_GitLab_GitHub_and_Zenodo.svg" width="450" /></a>
+<h2>Release on GitLab, GitHub, and Zenodo<a class="headerlink" href="#release-on-gitlab-github-and-zenodo" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/release_on_GitLab_GitHub_and_Zenodo.svg"><img alt="../_images/release_on_GitLab_GitHub_and_Zenodo.svg" class="align-center" src="../_images/release_on_GitLab_GitHub_and_Zenodo.svg" style="width: 450px;" /></a>
 <p>By making use of the <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git submodules feature</a> and the <a class="reference internal" href="release-management.html#zenodo-github"><span class="std std-ref">Zenodo
 GitHub integration</span></a> you can release on GitHub and Zenodo while
 referencing via a submodule a specific release of large data in a <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git LFS</a> repository hosted on the
@@ -225,8 +235,8 @@ LAMASUS <a class="reference internal" href="../IT-infrastructure/GitLab.html#git
 part of a GitHub-Zenodo release, by reference.</p>
 </section>
 <section id="forking-and-pull-requests">
-<span id="index-2"></span><h2>Forking and Pull Requests<a class="headerlink" href="#forking-and-pull-requests" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/forking_and_pull_requests.svg"><img alt="../_images/forking_and_pull_requests.svg" class="align-center" src="../_images/forking_and_pull_requests.svg" width="700" /></a>
+<span id="index-3"></span><h2>Forking and Pull Requests<a class="headerlink" href="#forking-and-pull-requests" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/forking_and_pull_requests.svg"><img alt="../_images/forking_and_pull_requests.svg" class="align-center" src="../_images/forking_and_pull_requests.svg" style="width: 700px;" /></a>
 <p>Once you have released a public repository on GitHub or GitLab, anyone can
 retrieve its content, typically by cloning the repository. When your repository
 catches the interest of many people, some will make improvements and wish to
@@ -269,14 +279,15 @@ the local repositories of collaborators.</p></li>
 </div>
 </section>
 <section id="caching-datasets">
-<h2>Caching datasets<a class="headerlink" href="#caching-datasets" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/caching_datasets.svg"><img alt="../_images/caching_datasets.svg" class="align-center" src="../_images/caching_datasets.svg" width="420" /></a>
+<h2>Caching datasets<a class="headerlink" href="#caching-datasets" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/caching_datasets.svg"><img alt="../_images/caching_datasets.svg" class="align-center" src="../_images/caching_datasets.svg" style="width: 420px;" /></a>
 <p>Modeling often relies on third-party datasets. These can be downloaded from
 where they have been published, for example a web site or SFTP server. This
 takes time, is sometimes failure prone, and there is often no guarantee that the
-dataset will remain available. To overcome these issues, a <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git LFS</a> repository hosted close to where
-the data is processed can be used to cache — for recurring use — the collection
-of datasets needed by a particular model.</p>
+dataset will remain available. To overcome these issues, a <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git LFS</a> repository or <a class="reference external" href="https://dvc.org/doc/user-guide/data-management/remote-storage">DVC remote
+storage</a>
+hosted close to where the data is processed can be used to cache — for recurring
+use — the collection of datasets needed by a particular model.</p>
 <p>By using Git, you keep the mutual versions of the datasets under control and
 build up a history of such version collections as repository commits. This
 allows you to reproduce results by retrieving a commit as used in a prior model
@@ -284,12 +295,91 @@ run.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Before using this workflow to cache <em>very large</em> datasets, coordinate with
-the administrators hosting the Git LFS server to ensure that it has
-sufficient capacity.</p>
+the administrators hosting the Git LFS server or DVC remote storage to ensure
+that it has sufficient capacity.</p>
+</div>
+</section>
+<section id="providing-input">
+<h2>Providing input<a class="headerlink" href="#providing-input" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/providing_input.svg"><img alt="../_images/providing_input.svg" class="align-center" src="../_images/providing_input.svg" style="width: 280px;" /></a>
+<p>Providing input to a model or data store deployed as a container on the
+LAMASUS Kubernetes cluster can be managed via a Git repository. By
+setting up the container with the credentials needed to pull from an
+Internet-accessible Git repository, it can import the input data, typically on
+startup. This approach provides a number of benefits:</p>
+<ul class="simple">
+<li><p>You can use a robust Git-based workflow (such as the ones outlined above) to
+manage the preparation of the input data.</p></li>
+<li><p>No bespoke mechanism for provisioning the input data to the container needs to
+be implemented: the existing Git, and GitHub or GitLab features can be reused.</p></li>
+<li><p>The repository provides a queue and retains a record of the input datasets.</p></li>
+<li><p>The specific tree of input data files used by a container is uniquely
+identified by a cryptographic Git commit hash. This makes the run easily
+reproducible at a later stage, given only the hash and repository URL.</p></li>
+</ul>
+<p>The LAMASUS GitLab instance is a good place to host an input repository
+because it is co-located with the LAMASUS Kubernetes cluster.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though a specialized data store such as a relational database stores data
+itself, it can be provided with well-managed initialization input via a Git
+repository. For example schema definitions and initial table content.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Interacting with a Git repository takes time on account of all the checks and
+balances. As long as the Git operations are fast relative to the execution
+time of your code, that is fine. But if your code has to respond quickly to
+changed inputs, providing an <span class="xref std std-ref">interface</span> or <span class="xref std std-ref">monitoring a message queue</span> may be necessary.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Before opting for this workflow, profile the growth rate of the input
+repository: since it retains a full history of all input datasets, it might
+grow to an unwieldy size if for your use case the input data is large and
+changes frequently. Using <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git LFS</a> or <a class="reference external" href="https://dvc.org/">DVC</a>
+can postpone the point as of which things become painful.</p>
+</div>
+</section>
+<section id="returning-output">
+<h2>Returning output<a class="headerlink" href="#returning-output" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/returning_output.svg"><img alt="../_images/returning_output.svg" class="align-center" src="../_images/returning_output.svg" style="width: 280px;" /></a>
+<p>By setting up a container with the credentials needed to push to a Git
+repository, a model deployed as a container on the LAMASUS Kubernetes cluster
+can return output via Git. Similarly, a specialized data store deployed as a
+container can serialize its content as checkpoint files to Git. Benefits are:</p>
+<ul class="simple">
+<li><p>The output or checkpoint becomes available for retrieval via the
+Internet if the Git repository is hosted on GitLab or GitHub.</p>
+<ul>
+<li><p>Datasets can be viewed and downloaded via the repository web pages or via a
+Git client.</p></li>
+<li><p>The output or checkpoint can be made public, or users can be given select
+access via the repository settings page</p></li>
+<li><p>Automated retrieval of output for further processing can be scripted by
+invoking the Git command line client from a batch file, shell script, or via
+a package that binds Git to your language of choice.</p></li>
+</ul>
+</li>
+<li><p>The repository keeps available a historical record of versioned datasets.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Interacting with a Git repository takes time on account of all the checks and
+balances. As long as the Git operations are fast relative to the execution
+time of your code, that is fine. But if your code has to provide output
+frequently, using an <span class="xref std std-ref">interface</span> or <span class="xref std std-ref">posting to a message queue</span> may be necessary.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Before opting for this workflow, profile the growth rate of the output
+repository: since it retains a full history of all output datasets, it might
+grow to an unwieldy size if output is produced frequently. Using <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git LFS</a> can postpone the point as of
+which things become painful.</p>
 </div>
 </section>
 <section id="referencing-repositories">
-<h2>Referencing repositories<a class="headerlink" href="#referencing-repositories" title="Permalink to this heading"></a></h2>
+<span id="submodule-references"></span><h2>Referencing repositories<a class="headerlink" href="#referencing-repositories" title="Link to this heading"></a></h2>
 <p>Tying together repositories via <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git submodule references</a> allows you to combine
 trees of files managed via Git using disparate workflows into a single parent
 repository. In this parent repository, a commit (a particular version of the
@@ -304,7 +394,7 @@ schedule, and so on.</p>
 copies tend to start to live a life of their own that you will need to manage.</p>
 </section>
 <section id="referencing-assets">
-<h2>Referencing assets<a class="headerlink" href="#referencing-assets" title="Permalink to this heading"></a></h2>
+<h2>Referencing assets<a class="headerlink" href="#referencing-assets" title="Link to this heading"></a></h2>
 <p>When your app or model depends on an asset available on the wider Internet that
 is not under Git version control, you can in principle download that asset and
 make a copy available by including it in your Git repository. But the asset may
@@ -319,13 +409,13 @@ downloaded when your app or model is installed or run.</p>
 below. It downloads some data in a ZIP archive via a URL, verifies via a
 checksum that the expected data was downloaded, and unzips the content.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nb">set</span> -e
-curl -f --output data.zip https://fenixservices.fao.org/faostat/static/bulkdownloads/Forestry_E_All_Data.zip
-sha256sum --check <span class="s">&lt;&lt;SUMS</span>
+<span class="nb">set</span><span class="w"> </span>-e
+curl<span class="w"> </span>-f<span class="w"> </span>--output<span class="w"> </span>data.zip<span class="w"> </span>https://fenixservices.fao.org/faostat/static/bulkdownloads/Forestry_E_All_Data.zip
+sha256sum<span class="w"> </span>--check<span class="w"> </span><span class="s">&lt;&lt;SUMS</span>
 <span class="s">41f063a6b112afce69171a31603e5707432c6f93767802039dcf7f51800a2cce *data.zip</span>
 <span class="s">SUMS</span>
-unzip data.zip
-rm data.zip
+unzip<span class="w"> </span>data.zip
+rm<span class="w"> </span>data.zip
 </pre></div>
 </div>
 <div class="admonition caution">
@@ -348,7 +438,7 @@ is worth exploring whether you can download assets via a <a class="reference ext
 </div>
 </section>
 <section id="custom-workflow">
-<h2>Custom workflow<a class="headerlink" href="#custom-workflow" title="Permalink to this heading"></a></h2>
+<h2>Custom workflow<a class="headerlink" href="#custom-workflow" title="Link to this heading"></a></h2>
 <p>You are not limited to picking one of the above workflows: you can combine or
 adapt them to fit your use case. This can be done in a step-wise manner, adding
 more elaboration as the collaboration grows or the work nears release.</p>
@@ -370,7 +460,7 @@ section of the Pro Git book.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Albert Brouwer, IIASA.</p>
+    <p>&#169; Copyright 2025, Albert Brouwer, IIASA.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

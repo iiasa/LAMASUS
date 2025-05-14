@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Release Management &mdash; LAMASUS  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #D0D0D0" >
-            <a href="../index.html">
-            <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v2023-10-30
+                v2025-05-14
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -99,7 +104,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../managing-code-and-data.html">Managing Code and Data</a></li>
       <li class="breadcrumb-item active">Release Management</li>
       <li class="wy-breadcrumbs-aside">
@@ -111,7 +116,7 @@
            <div itemprop="articleBody">
              
   <section id="release-management">
-<span id="index-0"></span><h1>Release Management<a class="headerlink" href="#release-management" title="Permalink to this heading"></a></h1>
+<span id="index-0"></span><h1>Release Management<a class="headerlink" href="#release-management" title="Link to this heading"></a></h1>
 <p>Once your code or data has evolved to a state of readiness, you can release it.
 How to do so depends on the audience and intended use of the code or data. For
 example, you may release to:</p>
@@ -126,7 +131,7 @@ example, you may release to:</p>
 workflows with multiple collaborators where ownership is shared, a capable
 collaborator should take on the role of <strong>release manager</strong>.</p>
 <section id="tagging">
-<span id="index-1"></span><h2>Tagging<a class="headerlink" href="#tagging" title="Permalink to this heading"></a></h2>
+<span id="index-1"></span><h2>Tagging<a class="headerlink" href="#tagging" title="Link to this heading"></a></h2>
 <p>Using <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">Git’s tagging feature</a> you can attach a label to
 a commit (a particular version of the tree of files under management) so that
 you can easily return to that particular version later. When people or
@@ -135,7 +140,7 @@ for tags, tagging can suffice for making a release. Typically, you will want to
 adopt some <a class="reference external" href="https://en.wikipedia.org/wiki/Software_versioning">versioning scheme</a> to name the tags.</p>
 </section>
 <section id="github-gitlab-release-management">
-<span id="release-github-gitlab"></span><h2>GitHub/GitLab Release Management<a class="headerlink" href="#github-gitlab-release-management" title="Permalink to this heading"></a></h2>
+<span id="release-github-gitlab"></span><h2>GitHub/GitLab Release Management<a class="headerlink" href="#github-gitlab-release-management" title="Link to this heading"></a></h2>
 <p>With a Git repository hosted on GitHub or GitLab, you can manage releases
 through the web interface via which the repository is administered. Both GitHub
 and GitLab allow you to create a tag (see above), write a release description,
@@ -173,13 +178,13 @@ in that branch, and push the branch out once ready and validated. Then the
 manager uses the GitHub/GitLab web interface to write the release notes and
 define the tag.</p>
 <section id="workflows">
-<h3>Workflows<a class="headerlink" href="#workflows" title="Permalink to this heading"></a></h3>
+<h3>Workflows<a class="headerlink" href="#workflows" title="Link to this heading"></a></h3>
 <p><a class="reference external" href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">This discussion of Git branching workflows</a> gives good sight on how
 these can support GitHub/GitLab release management.</p>
-<span class="target" id="zenodo-release"></span></section>
+</section>
 </section>
 <section id="zenodo-release-management">
-<span id="zenodo-metadata"></span><h2>Zenodo Release Management<a class="headerlink" href="#zenodo-release-management" title="Permalink to this heading"></a></h2>
+<span id="zenodo-metadata"></span><span id="zenodo-release"></span><h2>Zenodo Release Management<a class="headerlink" href="#zenodo-release-management" title="Link to this heading"></a></h2>
 <p>To make your research output findable and citable, you can release it on Zenodo.
 Zenodo allows uploads of file sets up to 50GB in size, assists description with
 metadata, and provides a <a class="reference external" href="https://en.wikipedia.org/wiki/Digital_object_identifier">digital object identifier</a> (DOI).</p>
@@ -196,7 +201,7 @@ permanent DOIs nor does it generate permanent records.</p>
 <p>The following subsections detail various ways to use Zenodo as part of your
 release workflow.</p>
 <section id="zenodo-only">
-<h3>Zenodo only<a class="headerlink" href="#zenodo-only" title="Permalink to this heading"></a></h3>
+<h3>Zenodo only<a class="headerlink" href="#zenodo-only" title="Link to this heading"></a></h3>
 <p>When your research output is not evolving and does not need to be downloadable
 in a robust way that can be scripted, then there is no need to manage the files
 with Git and you can just upload to Zenodo only, specify the metadata, and be
@@ -211,7 +216,7 @@ or communities to publish under. To do so:</p>
 </ol>
 </section>
 <section id="releasing-new-versions">
-<h3>Releasing new versions<a class="headerlink" href="#releasing-new-versions" title="Permalink to this heading"></a></h3>
+<h3>Releasing new versions<a class="headerlink" href="#releasing-new-versions" title="Link to this heading"></a></h3>
 <p>Zenodo allows you to release new versions of your research output as updates
 under the same record. To do so manually, select a published record, click on
 the <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">version</span></code> button, and proceed to upload files and adjust the metadata.
@@ -221,7 +226,7 @@ entire series of versions.</p>
 versioning FAQ</a> for further details.</p>
 </section>
 <section id="automatic-zenodo-upload-of-github-release">
-<span id="zenodo-github"></span><h3>Automatic Zenodo upload of GitHub release<a class="headerlink" href="#automatic-zenodo-upload-of-github-release" title="Permalink to this heading"></a></h3>
+<span id="zenodo-github"></span><h3>Automatic Zenodo upload of GitHub release<a class="headerlink" href="#automatic-zenodo-upload-of-github-release" title="Link to this heading"></a></h3>
 <p>When <a class="reference internal" href="#release-github-gitlab"><span class="std std-ref">releasing on GitHub</span></a>, you can use the
 <a class="reference external" href="https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content#issuing-a-persistent-identifier-for-your-repository-with-zenodo">Zenodo-GitHub integration</a>
 to automatically archive your GitHub releases on Zenodo and have Zenodo generate
@@ -232,41 +237,41 @@ under the Zenodo record.</p>
 via a <code class="docutils literal notranslate"><span class="pre">.zenodo.json</span></code> file that is used by Zenodo to automatically populate the
 metadata of the publication record. For LAMASUS you can use the below example
 as a starting template for such a JSON file.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;creators&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;orcid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0004-0032-1089-6543&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;affiliation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Land management research institute&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bauer, Bernd&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;orcid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0005-0043-2108-7643&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;affiliation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Land management research institute&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tilling, Tina&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;creators&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;orcid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0004-0032-1089-6543&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;affiliation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Land management research institute&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bauer, Bernd&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;orcid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0005-0043-2108-7643&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;affiliation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Land management research institute&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tilling, Tina&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
 
-<span class="w">    </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apache-2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apache-2.0&quot;</span><span class="p">,</span>
 
-<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LUM drivers&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LUM drivers&quot;</span><span class="p">,</span>
 
-<span class="w">    </span><span class="nt">&quot;related_identifiers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;scheme&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;doi&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10.1234/software.paper.5678&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;relation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;isDocumentedBy&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;resource_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;publication-article&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;related_identifiers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;scheme&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;doi&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10.1234/software.paper.5678&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;relation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;isDocumentedBy&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;resource_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;publication-article&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
 
-<span class="w">    </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;drivers&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;land use&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;agriculture&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;drivers&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;land use&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;agriculture&quot;</span><span class="p">],</span>
 
-<span class="w">    </span><span class="nt">&quot;communities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lamasus&quot;</span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;communities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lamasus&quot;</span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
 
-<span class="w">    </span><span class="nt">&quot;grants&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;101060423&quot;</span><span class="p">}]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;grants&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;101060423&quot;</span><span class="p">}]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -283,7 +288,7 @@ to be added.</p>
 </div>
 </section>
 <section id="manual-zenodo-upload-of-a-git-release">
-<h3>Manual Zenodo upload of a Git release<a class="headerlink" href="#manual-zenodo-upload-of-a-git-release" title="Permalink to this heading"></a></h3>
+<h3>Manual Zenodo upload of a Git release<a class="headerlink" href="#manual-zenodo-upload-of-a-git-release" title="Link to this heading"></a></h3>
 <p>When your research output is evolving and under Git management, you can make
 your release citable with a Zenodo DOI, and make it findable and downloadable
 via Zenodo. To do so manually:</p>
@@ -361,7 +366,7 @@ and can be copied and pasted.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Albert Brouwer, IIASA.</p>
+    <p>&#169; Copyright 2025, Albert Brouwer, IIASA.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

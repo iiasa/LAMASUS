@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Introduction &mdash; LAMASUS  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #D0D0D0" >
-            <a href="../index.html">
-            <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v2023-10-30
+                v2025-05-14
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -85,7 +90,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../managing-code-and-data.html">Managing Code and Data</a></li>
       <li class="breadcrumb-item active">Introduction</li>
       <li class="wy-breadcrumbs-aside">
@@ -97,7 +102,7 @@
            <div itemprop="articleBody">
              
   <section id="introduction">
-<span id="index-0"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h1>
+<span id="index-0"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
 <p>Handling files is something we all have to deal with, whether code, data or
 otherwise. If you are an owner of or collaborator on a code base or dataset,
 there are many <em>ad hoc</em> means at your disposal for changing, copying, sharing,
@@ -113,7 +118,7 @@ modifications be reconciled?</p></li>
 <li><p>What data was used for last month’s run?</p></li>
 </ul>
 <p>Managing a collection of files requires answering such questions. It does not
-take many changes, copies, collaborators, or weeks of interruption<a class="footnote-reference brackets" href="#f1" id="id1">1</a>
+take many changes, copies, collaborators, or weeks of interruption<a class="footnote-reference brackets" href="#f1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>
 before this becomes practically impossible without software assistance. The
 following pages suggest means of practical software-assisted management that can
 be adapted to fit your use case.</p>
@@ -122,22 +127,24 @@ or your team’s needs — that allows you to evolve and release well-controlled
 versions of the file tree, with attached and verified copies of the files
 located where needed for editing, processing, review, or backup purposes. All
 under <strong>unified management</strong>.</p>
-<p>This helps make your research reproducible<a class="footnote-reference brackets" href="#f2" id="id2">2</a> and in the long run will save
+<p>This helps make your research reproducible<a class="footnote-reference brackets" href="#f2" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> and in the long run will save
 much time and avoid many mistakes relative to managing manually or with outdated
 tools and workflows. The choice is yours.</p>
 <hr class="docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Even when you manage a set of files by yourself, you will be
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Even when you manage a set of files by yourself, you will be
 collaborating: with your future you. Your future you may have forgotten what
 you know now, particularly when returning to the project after a long
 interruption. You will thank yourself for having managed change properly by
 keeping good record of the what and why.</p>
-</dd>
-<dt class="label" id="f2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>If it is not reproducible, it is not science.</p>
-</dd>
-</dl>
+</aside>
+<aside class="footnote brackets" id="f2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>If it is not reproducible, it is not science.</p>
+</aside>
+</aside>
 </section>
 
 
@@ -151,7 +158,7 @@ keeping good record of the what and why.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Albert Brouwer, IIASA.</p>
+    <p>&#169; Copyright 2025, Albert Brouwer, IIASA.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

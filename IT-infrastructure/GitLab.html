@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GitLab &mdash; LAMASUS  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #D0D0D0" >
-            <a href="../index.html">
-            <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v2023-10-30
+                v2025-05-14
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -77,7 +82,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../IT-infrastructure.html">IT Infrastructure</a></li>
       <li class="breadcrumb-item active">GitLab</li>
       <li class="wy-breadcrumbs-aside">
@@ -89,14 +94,14 @@
            <div itemprop="articleBody">
              
   <section id="gitlab">
-<span id="id1"></span><h1>GitLab<a class="headerlink" href="#gitlab" title="Permalink to this heading"></a></h1>
-<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/GitLab"><img alt="../_images/GitLab_logo.svg" class="align-left" src="../_images/GitLab_logo.svg" width="100" /></a>
+<span id="id1"></span><h1>GitLab<a class="headerlink" href="#gitlab" title="Link to this heading"></a></h1>
+<a class="reference external image-reference" href="https://en.wikipedia.org/wiki/GitLab"><img alt="../_images/GitLab_logo.svg" class="align-left" src="../_images/GitLab_logo.svg" style="width: 100px;" /></a>
 <p>For use cases where the limitations of GitHub are problematic, a self-hosted
 <a class="reference external" href="https://en.wikipedia.org/wiki/GitLab">GitLab</a> instance is available. It
 provides code hosting and development collaboration features that are very
 similar in scope to GitHub, but by virtue of self-hosting the limitations of
 data sizes and GitHub Actions (the GitLab equivalent is called <a class="reference external" href="https://docs.gitlab.com/ee/ci/">GitLab CI/CD</a>) are circumvented. <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git Large File Storage</a> (LFS) is supported without
-payment.<a class="footnote-reference brackets" href="#f1" id="id2">1</a></p>
+payment.<a class="footnote-reference brackets" href="#f1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 <p>To get started with GitLab, browse to the LAMASUS <a class="reference external" href="https://gitlab.iiasa.ac.at">GitLab instance</a> and register an account <em>with your institutional
 email address</em> by clicking on the <strong>Register now</strong> link at the bottom of the
 page. Should your email address not be recognized as belonging to a domain of a
@@ -104,11 +109,15 @@ LAMASUS partner institution, the registration will fail and you will see an
 error message requesting you to send an e-mail to still request access.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>When using the SSH protocol, the regular SSH port 22 is currently not usable
-when connecting from the IIASA-internal network. Until the deployment is improved you will need to connect via port 2222
-instead when using a Git client on the IIASA-internal network. You can do so
-by adding the port number to the the Git SSH URL as follows
-<code class="docutils literal notranslate"><span class="pre">ssh://git&#64;gitlab.iiasa.ac.at:2222/lamasus/repository.git</span></code>.</p>
+<p>Outside of IIASA, the SSH protocol cannot be used to access this GitLab
+instance. When connecting from the IIASA-internal network, the default SSH
+port 22 is currently not usable for SSH. Instead, you will need to use port
+2222 when using the SSH protocol. You can do so by adding the port number to
+the the Git SSH URL as follows <code class="docutils literal notranslate"><span class="pre">ssh://git&#64;gitlab.iiasa.ac.at:2222/lamasus/repository.git</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using Git LFS, you need to use the HTTPS protocol.</p>
 </div>
 <p>For security, two-factor authentication (2FA) is required. See the <a class="reference external" href="https://docs.gitlab.com/ee/user/profile/account/two_factor_authentication.html">GitLab
 documentation on 2FA</a>
@@ -117,34 +126,36 @@ accommodated via a TOTP app on a smartphone or tablet. If you do not have one
 installed, TOTP apps are readily available via app stores. If you prefer a free
 TOTP app that is open-source and without spyware, <a class="reference external" href="https://en.wikipedia.org/wiki/FreeOTP">FreeOTP</a> or its FreeOTP+ fork (which is more
 user friendly) are good options.</p>
-<p>Until a more sensible authentication scheme is enabled on the GitLab instance,
-2FA requires the use of <a class="reference external" href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html">personal access tokens</a> when
+<p>Until an alternative authentication scheme is enabled on the GitLab instance,
+2FA requires the use of <a class="reference external" href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html">personal access tokens</a> or
+<a class="reference external" href="https://docs.gitlab.com/user/project/settings/project_access_tokens/">project access tokens</a> when
 using the HTTPS protocol. You can insert a GitLab personal access token into a
 Git HTTPS URL as follows: <code class="docutils literal notranslate"><span class="pre">https://&lt;GitLab</span> <span class="pre">or</span> <span class="pre">Token</span> <span class="pre">User</span>
 <span class="pre">Name&gt;:&lt;Token&gt;&#64;gitlab.iiasa.ac.at/&lt;Group&gt;/&lt;Repo</span> <span class="pre">Name&gt;.git</span></code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When using Git LFS, you need to use the HTTPS protocol.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>When you get an error such as <code class="docutils literal notranslate"><span class="pre">SSL:</span> <span class="pre">CERTIFICATE_VERIFY_FAILED</span></code> a working certificate has
-not been installed on the server side. To make things work
-while that is the case, you can use the <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">http.sslVerify=false</span></code>
-Git command line option or set the corresponding configuration setting on
-your repo. Do <strong>not</strong> do this for your global Git configuration: it is
-insecure.</p>
+<p>When you get an error such as <code class="docutils literal notranslate"><span class="pre">SSL:</span> <span class="pre">CERTIFICATE_VERIFY_FAILED</span></code> you can make
+things work until the certificate issue is fixed by using the <code class="docutils literal notranslate"><span class="pre">-c</span>
+<span class="pre">http.sslVerify=false</span></code> Git command line option or by seting the corresponding
+configuration setting on your local repository clone. Do <strong>not</strong> do this for your global Git
+configuration: it is insecure.</p>
 </div>
 <p>The GitLab account approval process is manual and may take a while. Once your
-account has been activated, request access to the LAMASUS GitLab group by…</p>
+account has been activated you can be made a member of one of more groups
+corresponding to a research project or some other shared interest. If you joined
+GitLab in order to gain access to the resources of a group and you are not added
+to that group because the groups administrators did not get notified of your
+signup, contact the administrator of that GitLab group or the research project
+manager and request membership.</p>
 <p>Visit the <a class="reference external" href="https://docs.gitlab.com/ee/tutorials/">GitLab online tutorials</a> to
 learn more about the platform.</p>
 <hr class="docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
-<dd><p>Beyond the already-sunk storage infrastructure costs at IIASA.</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Beyond the already-sunk storage infrastructure costs at IIASA.</p>
+</aside>
+</aside>
 </section>
 
 
@@ -158,7 +169,7 @@ learn more about the platform.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Albert Brouwer, IIASA.</p>
+    <p>&#169; Copyright 2025, Albert Brouwer, IIASA.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

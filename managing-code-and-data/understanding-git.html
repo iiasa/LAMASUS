@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Understanding Git &mdash; LAMASUS  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #D0D0D0" >
-            <a href="../index.html">
-            <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v2023-10-30
+                v2025-05-14
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -85,7 +90,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../managing-code-and-data.html">Managing Code and Data</a></li>
       <li class="breadcrumb-item active">Understanding Git</li>
       <li class="wy-breadcrumbs-aside">
@@ -97,16 +102,16 @@
            <div itemprop="articleBody">
              
   <section id="understanding-git">
-<h1>Understanding Git<a class="headerlink" href="#understanding-git" title="Permalink to this heading"></a></h1>
+<h1>Understanding Git<a class="headerlink" href="#understanding-git" title="Link to this heading"></a></h1>
 <p>Having seen how various use cases can be accommodated by workflows that leverage
 the Git ecosystem for managing code and data, it is important to gain a better
 understanding of Git itself. Instead of diving into Git’s many features, which
 can be confusing, let’s take a step back to gain an overview.</p>
-<a class="reference internal image-reference" href="../_images/commits_optimized.svg" id="commit"><img alt="../_images/commits_optimized.svg" class="align-center" id="commit" src="../_images/commits_optimized.svg" width="700" /></a>
+<a class="reference internal image-reference" href="../_images/commits_optimized.svg" id="commit"><img alt="../_images/commits_optimized.svg" class="align-center" id="commit" src="../_images/commits_optimized.svg" style="width: 700px;" /></a>
 <p>In essence, Git allows you to tightly manage the evolution of trees of files.
 Each new tree version resulting from changes to a tree (a <strong>commit</strong>) is stored by
 Git in a repository in unmodifiable and retrievable form, with a unique
-identifier.<a class="footnote-reference brackets" href="#f1" id="id1">1</a> This unique identifier is a so-called <strong>commit hash</strong><a class="footnote-reference brackets" href="#f2" id="id2">2</a> that
+identifier.<a class="footnote-reference brackets" href="#f1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> This unique identifier is a so-called <strong>commit hash</strong><a class="footnote-reference brackets" href="#f2" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> that
 is obtained by applying a cryptographic hash function to:</p>
 <ul class="simple">
 <li><p>The file changes</p></li>
@@ -119,7 +124,7 @@ is obtained by applying a cryptographic hash function to:</p>
 <p>None of these can change without invalidating the commit hash. This also holds
 for the parent of the parent, all the way back to an empty initial repository:
 the hash fixes the whole history of changes and hence also the state of the file
-tree at the time of the commit. The same hash cannot<a class="footnote-reference brackets" href="#f3" id="id3">3</a> result from the
+tree at the time of the commit. The same hash cannot<a class="footnote-reference brackets" href="#f3" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> result from the
 same file tree but with a different sequence of changes leading up to it. It
 cannot result from different authors making the very same changes, or the same
 authors committing the very same changes at a different time or with a different
@@ -148,28 +153,31 @@ evolution. It is perfectly possible to use Git and still make a mess.</p>
 <p>In short, Git is stupid, it needs your insight and intelligence.</p>
 </div>
 <hr class="docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Since a commit involves a set of changes to a particular prior version
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Since a commit involves a set of changes to a particular prior version
 of the file tree, Git can show you the changes and also return the updated
 file tree given a commit identifier: you can therefore validly conceptualize
 a commit both as a change set and as a tree version.</p>
-</dd>
-<dt class="label" id="f2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Commit hash values are represented by Git as large <a class="reference external" href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</a> numbers with hexadecimal
+</aside>
+<aside class="footnote brackets" id="f2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Commit hash values are represented by Git as large <a class="reference external" href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</a> numbers with hexadecimal
 digits encoded by the characters <code class="docutils literal notranslate"><span class="pre">0123456789abcdef</span></code>. In the output of Git
 commands you will therefore see commits identified by strings such as
 <code class="docutils literal notranslate"><span class="pre">b773c1eb0b1cc59febce35c9b92d2a8ca3cb7e89</span></code>. You can use these as input to
 Git commands that operate on specific commits.</p>
-</dd>
-<dt class="label" id="f3"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>Hash functions can produce hash collisions: yielding the same hash
+</aside>
+<aside class="footnote brackets" id="f3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Hash functions can produce hash collisions: yielding the same hash
 value with different input data. But Git uses the <a class="reference external" href="https://en.wikipedia.org/wiki/SHA-1">SHA-1</a> and stronger <a class="reference external" href="https://en.wikipedia.org/wiki/SHA-256">SHA-256</a> cryptographic hash functions which
 have been constructed such that the probability of a hash collision is
 extremely tiny, so that one can safely assume that hash values are unique
 for a given input.</p>
-</dd>
-</dl>
+</aside>
+</aside>
 </section>
 
 
@@ -183,7 +191,7 @@ for a given input.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Albert Brouwer, IIASA.</p>
+    <p>&#169; Copyright 2025, Albert Brouwer, IIASA.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

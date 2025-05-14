@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Specialized Data Stores &mdash; LAMASUS  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #D0D0D0" >
-            <a href="../index.html">
-            <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/LAMASUS-color-positive.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v2023-10-30
+                v2025-05-14
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -58,8 +63,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Specialized Data Stores</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#do-you-really-need-one">Do you really need one?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-read-only-stores">Use read-only stores</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#update-initialize-from-a-git-lfs-repository">Update/initialize from a Git (LFS) repository</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exporting-to-a-git-lfs-repository">Exporting to a Git LFS repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-initialize-from-a-git-lfs-dvc-repository">Update/initialize from a Git (LFS/DVC) repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exporting-to-a-git-lfs-dvc-repository">Exporting to a Git LFS/DVC repository</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#containerized-store">Containerized store</a></li>
 </ul>
 </li>
@@ -92,7 +97,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../managing-code-and-data.html">Managing Code and Data</a></li>
       <li class="breadcrumb-item active">Specialized Data Stores</li>
       <li class="wy-breadcrumbs-aside">
@@ -104,7 +109,7 @@
            <div itemprop="articleBody">
              
   <section id="specialized-data-stores">
-<h1>Specialized Data Stores<a class="headerlink" href="#specialized-data-stores" title="Permalink to this heading"></a></h1>
+<h1>Specialized Data Stores<a class="headerlink" href="#specialized-data-stores" title="Link to this heading"></a></h1>
 <p>Not all data management fits into the pattern of evolving a file tree. Sometimes
 a specialized data store such as a geo-spatial database or a relational database
 is needed to attain sufficient performance. Such data stores index the data for
@@ -117,7 +122,7 @@ introduce their own complexities such as hosting, maintenance, and the need for
 an additional access control mechanism. This page suggests ways to mitigate
 these risks and complexities.</p>
 <section id="do-you-really-need-one">
-<h2>Do you really need one?<a class="headerlink" href="#do-you-really-need-one" title="Permalink to this heading"></a></h2>
+<h2>Do you really need one?<a class="headerlink" href="#do-you-really-need-one" title="Link to this heading"></a></h2>
 <p>Carefully consider whether a specialized data store is really required.
 Sometimes they are added to a project for relatively frivolous reasons, for
 example when just a few data files with an efficient data structure such as a
@@ -129,7 +134,7 @@ complexities. These costs should be weighed when making a decision on
 introducing a specialized data store.</p>
 </section>
 <section id="use-read-only-stores">
-<h2>Use read-only stores<a class="headerlink" href="#use-read-only-stores" title="Permalink to this heading"></a></h2>
+<h2>Use read-only stores<a class="headerlink" href="#use-read-only-stores" title="Link to this heading"></a></h2>
 <p>Speed of access is the main reason for requiring a specialized data store. The
 indexing and selective querying allow you to quickly retrieve just the
 information needed, for example for interactive visualization. This use case can
@@ -137,12 +142,13 @@ be covered by read-only access to the data store: only queries are allowed,
 updates are disallowed. Instead, the data in the data store is updated and
 re-indexed only on release of the data at the end of a well-managed workflow.</p>
 </section>
-<section id="update-initialize-from-a-git-lfs-repository">
-<h2>Update/initialize from a Git (LFS) repository<a class="headerlink" href="#update-initialize-from-a-git-lfs-repository" title="Permalink to this heading"></a></h2>
+<section id="update-initialize-from-a-git-lfs-dvc-repository">
+<h2>Update/initialize from a Git (LFS/DVC) repository<a class="headerlink" href="#update-initialize-from-a-git-lfs-dvc-repository" title="Link to this heading"></a></h2>
 <p>By providing scripting to update/initialize the data store from  Git repository
-— or a Git LFS repository when the data is large — you can bring the post-update
-or instantiation state of the data store under unified Git management. This can
-be useful for:</p>
+— or a <a class="reference external" href="https://docs.gitlab.com/ee/topics/git/lfs/">Git LFS</a> repository or
+<a class="reference external" href="https://dvc.org/doc/user-guide/data-management/remote-storage">DVC remote</a>
+when the data is large — you can bring the post-update or instantiation state of
+the data store under unified Git management. This can be useful for:</p>
 <ul class="simple">
 <li><p>Ensuring that the data store contains only well-vetted and verified data.</p></li>
 <li><p>Publishing a practical means for others to to set up their own data store.</p>
@@ -156,11 +162,11 @@ store.</p></li>
 store as used for development or integration testing, together with the code.</p></li>
 </ul>
 </section>
-<section id="exporting-to-a-git-lfs-repository">
-<h2>Exporting to a Git LFS repository<a class="headerlink" href="#exporting-to-a-git-lfs-repository" title="Permalink to this heading"></a></h2>
+<section id="exporting-to-a-git-lfs-dvc-repository">
+<h2>Exporting to a Git LFS/DVC repository<a class="headerlink" href="#exporting-to-a-git-lfs-dvc-repository" title="Link to this heading"></a></h2>
 <p>Specialized data stores typically allow the data they contain to be exported to
-files. These files will be large and can be stored in a Git LFS repository for
-purposes of:</p>
+files. These files will be large and can be stored in a Git LFS repository or
+DVC remote for purposes of:</p>
 <ul class="simple">
 <li><p>Publishing an evolved version of the data for the public or external
 researchers to use when setting up their own instance.</p>
@@ -183,13 +189,13 @@ re-updated, from its original data source.</p>
 </div>
 </section>
 <section id="containerized-store">
-<h2>Containerized store<a class="headerlink" href="#containerized-store" title="Permalink to this heading"></a></h2>
+<h2>Containerized store<a class="headerlink" href="#containerized-store" title="Link to this heading"></a></h2>
 <p>Instead of deploying the data store on server infrastructure with system
 administration requirements, consider instantiating the store in a self-managed
 container via scripting. This reduces operational complexities.</p>
-<p>The container can be transient when the data is pulled in from a Git LFS
+<p>The container can be transient when the data is pulled in from a Git (LFS/DVC)
 repository on instantiation and, in case of data stores that are not read-only,
-exported to a Git LFS repository on destruction. See above.</p>
+pushed to a Git (LFS/DVC) repository on destruction. See above.</p>
 <p>This approach makes it easier for others to reproduce your processing setup and
 hence your research. It also makes it easy to set up additional instances of the
 data store, for example for development or integration testing. When done
@@ -212,7 +218,7 @@ transient management instance against which those updates are performed.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Albert Brouwer, IIASA.</p>
+    <p>&#169; Copyright 2025, Albert Brouwer, IIASA.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
